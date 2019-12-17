@@ -1,4 +1,4 @@
-package java;
+package challenges_java;
 
 public class stringChallenge1 {
 
