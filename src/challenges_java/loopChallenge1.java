@@ -19,13 +19,10 @@ public class loopChallenge1 {
 
             //querys
             for(int x = 0; x < n; x ++) {
-                long total  = a + (x*b);
-                System.out.print(total +" ");
+                 a  = a + (int)Math.pow(2,x) * b;
+                System.out.print(a +" ");
             }
-
-            
-
-
+            System.out.println(" ");
         }
 
         in.close();
