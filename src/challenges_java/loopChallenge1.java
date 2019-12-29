@@ -16,10 +16,11 @@ public class loopChallenge1 {
             int b = in.nextInt();
             int n = in.nextInt();
 
+
             //querys
-            for(int x = 0; x <= n; x ++) {
-
-
+            for(int x = 0; x < n; x ++) {
+                long total  = a + (x*b);
+                System.out.print(total +" ");
             }
 
             
