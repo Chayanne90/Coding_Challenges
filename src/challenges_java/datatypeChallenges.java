@@ -12,17 +12,31 @@ public class datatypeChallenges {
 
         int t = sc.nextInt();
 
-        try {
-            long n = sc.nextLong();
-            System.out.println(n+ " Can;t fitted in: ");
+        for(int i = 0; i < t; i++) {
 
-            if (n >= -128 && n <= 127) System.out.println("* byte");
+            try {
 
-        } catch (Exception e) {
+                long n = sc.nextLong();
+                System.out.println(n+ " Can fitted in: ");
 
-            System.out.println(sc.next() + "can't be found anywhere.");
+                if (n >= -128 && n <= 127) System.out.println("* byte");
+
+                if (n >= -32768 && n <= 32767) System.out.println("* short");
+
+                int num1 = (int)Math.pow(2,31)-1;
+
+                if (n >= -(int)Math.pow(2,31) &&  n <= num1) System.out.println("* int");
+
+                int num2 = (int)Math.pow(2,63)-1;
+
+                if (n >= -(int)Math.pow(2,63) &&  n <= num2) System.out.println("* long");
+
+
+            } catch (Exception e) {
+
+                System.out.println(sc.next() + "can't be found anywhere.");
+            }
+
         }
-
-
     }
 }
