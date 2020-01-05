@@ -10,6 +10,7 @@ public class endoffile {
 
         Scanner sc = new Scanner(System.in);
 
+        int i = 0;
         while(true){
 
          break;
