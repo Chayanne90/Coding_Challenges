@@ -1,5 +1,7 @@
 package challenges_java;
 
+import java.util.Arrays;
+
 public class TwoSum {
 
     /*Tow sum challenge by chayanne from LeetCode
@@ -20,16 +22,23 @@ public class TwoSum {
 
     public static int[] twoSum(int[] nums, int target) {
 
-        int [] arr = new int[4];
-        int y = 1;
+        int x = 0;
+
+        int [] arr = new int[x];
+
         for(int i = 0; i <= nums.length-1; i++) {
 
-            int x = nums[i] + nums[y];
+            x++;
+            int total = nums[i] + nums[x];
 
-            if(x == target) {
+            if( total == target) {
 
-                arr[i] = nums[i];
+                arr = new int[] {i, x};
+
+                break;
+
             }
+
         }
         return arr;
     }
@@ -37,10 +46,9 @@ public class TwoSum {
     public static void main(String [ ] args) {
 
         int [] nums;
-        nums = new int[] {2,7,11,15};
+        nums = new int[] {3,2,3};
+        int target = 6;
 
-        //int [] r = twoSum(nums,9);
-
-        System.out.println(twoSum(nums,9));
+        System.out.println(Arrays.toString(twoSum(nums, target)));
     }
 }
