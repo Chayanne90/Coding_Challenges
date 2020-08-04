@@ -1,4 +1,4 @@
-package challenges_java;
+package TutorialsChallenges;
 
 public class Floor {
 
@@ -25,7 +25,7 @@ public class Floor {
 
     }
 
-    public double getArea(){
+    public double getArea() {
         return this.width * this.length;
     }
 }
