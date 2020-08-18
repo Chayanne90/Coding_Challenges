@@ -25,7 +25,7 @@ public class Car extends Vehicle  {
     public void changeSpeed(int speed, int direction) {
 
         move(speed,direction);
-        System.out.println("Speed "+speed+ " direction" + direction);
+        System.out.println("Speed "+speed+ " direction " + direction);
     }
 
     @Override
