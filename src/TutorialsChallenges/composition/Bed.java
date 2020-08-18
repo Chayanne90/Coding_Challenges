@@ -2,14 +2,14 @@ package TutorialsChallenges.composition;
 
 public class Bed {
 
-    private String Style;
+    private String style;
     private int pillows;
     private int height;
     private int sheets;
     private int quilt;
 
     public Bed(String style, int pillows, int height, int sheets, int quilt) {
-        Style = style;
+        this.style = style;
         this.pillows = pillows;
         this.height = height;
         this.sheets = sheets;
@@ -17,7 +17,7 @@ public class Bed {
     }
 
     public String getStyle() {
-        return Style;
+        return style;
     }
 
     public int getPillows() {
