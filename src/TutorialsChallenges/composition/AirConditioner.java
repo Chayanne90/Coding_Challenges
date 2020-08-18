@@ -6,6 +6,7 @@ public class AirConditioner {
     private String mode;
     private int temperature;
 
+
     public AirConditioner(String capacity, String mode, int temperature) {
         this.capacity = capacity;
         this.mode = mode;
@@ -24,7 +25,12 @@ public class AirConditioner {
         return temperature;
     }
 
-    public void turnOnAC() {
-        System.out.println("Av on");
+    public void turnOnAC(boolean status) {
+        if (status == true){
+
+            System.out.println("Ac -> on...");
+        }else if (status == false){
+            System.out.println("Ac -> off...");
+        }
     }
 }
