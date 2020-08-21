@@ -12,14 +12,21 @@ public class BillsBurger {
 //        hamburger.addAddition4("Cheese", 3.00);
 //
 //        System.out.println("the total is "+  hamburger.itemizeHamburger());
+//
+//        healthyBurger healthyBurger = new healthyBurger(" brown "," turky "," veggy ", 10.00);
+//
+//        healthyBurger.addAddition1("Lettuce", 6.80);
+//        healthyBurger.addAddition2("Tomato",2.50);
+//        healthyBurger.addHeathyAddition1("Bacon",3.00);
+//        healthyBurger.addHeathyAddition2("lightMayo",0.50);
+//        System.out.println("the total is "+  healthyBurger.itemizeHamburger());
 
-        healthyBurger healthyBurger = new healthyBurger(" brown "," turky "," veggy ", 10.00);
+        DeluxeHamburger dhamburger = new DeluxeHamburger();
 
-        healthyBurger.addAddition1("Lettuce", 6.80);
-        healthyBurger.addAddition2("Tomato",2.50);
-        healthyBurger.addHeathyAddition1("Bacon",3.00);
-        healthyBurger.addHeathyAddition2("lightMayo",0.50);
-        System.out.println("the total is "+  healthyBurger.itemizeHamburger());
+        dhamburger.addAddition3("tomato", 2.30);
+        dhamburger.addAddition1("Avocado", 1.80);
+        System.out.println("You total is : "+ dhamburger.itemizeHamburger());
+
 
 
 
