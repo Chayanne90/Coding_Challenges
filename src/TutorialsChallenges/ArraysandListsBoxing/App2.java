@@ -92,7 +92,6 @@ public class App2 {
         }
         */
 
-
         System.out.println("non Reverse array  -> " + Arrays.toString(arr));
         reverseArr(arr);
         System.out.println("Reverse arr -> "+ Arrays.toString(arr));
