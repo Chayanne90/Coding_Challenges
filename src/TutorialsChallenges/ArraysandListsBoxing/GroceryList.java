@@ -18,19 +18,27 @@ public class GroceryList {
     }
 
     public static void updateGrocery(int index, String item) {
-        
+
         groceryList.set(index, item);
         System.out.println("Goocery item " + (index+1)+ " has been modifie");
     }
 
     public static void removeGrocery(int index) {
 
-        String theItem = groceryList.get(index);
+       // String theItem = groceryList.get(index);
         groceryList.remove(index);
     }
 
-    public static void main(String[] args) {
 
+    public String findItem(String item) {
+
+        boolean exists = groceryList.contains(item);
+        int position = groceryList.indexOf(item);
+
+        if (position >= 0) {
+            return groceryList.get(position);
+        }
+
+        return null;
     }
-
 }
