@@ -6,8 +6,7 @@ public class GroceryList {
 
     private  static ArrayList<String> groceryList = new ArrayList<String>();
 
-
-    public  void addItems (String item) {
+    public void addItems (String item) {
 
         groceryList.add(item);
     }
@@ -19,16 +18,17 @@ public class GroceryList {
         }
     }
 
-    public  void updateGrocery(int index, String item) {
+    public  void updateGrocery(String oldItem, String newItem) {
 
-        groceryList.set(index, item);
-        System.out.println("Goocery item " + (index+1)+ " has been modifie");
+        int index = groceryList.indexOf(oldItem);
+        groceryList.set(index, newItem);
+        System.out.println("Goocery item " + (index+1)+ " has been modified");
     }
 
-    public  void removeGrocery(int index) {
+    public  void removeGrocery(String item) {
 
-       // String theItem = groceryList.get(index);
-        groceryList.remove(index);
+        int theItem = groceryList.indexOf(item);
+        groceryList.remove(item);
     }
 
     public String findItem(String item) {
