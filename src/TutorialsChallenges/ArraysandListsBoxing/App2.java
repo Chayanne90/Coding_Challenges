@@ -55,8 +55,7 @@ public class App2 {
 
     /*Reverse array*/
     private static void reverseArr(int [] numArr) {
-
-        
+        /*
         for (int i = 0; i < numArr.length; i++) {
             System.out.println("array index - > " + numArr[i]);
         }
@@ -64,6 +63,15 @@ public class App2 {
         System.out.println("this is the reverse array \r");
         for (int i = numArr.length-1; i > 0 ; i--) {
             System.out.println("array index - > " + numArr[i]);
+        }
+         */
+         int maxArr = numArr.length - 1;
+         int halfArr = numArr.length / 2;
+         int temp = 0;
+        for (int i = 0; i < halfArr; i++) {
+            temp = numArr[i];
+            numArr[i] = numArr[maxArr - i];
+            numArr[maxArr-i] = temp;
         }
     }
 
@@ -85,7 +93,9 @@ public class App2 {
         */
 
 
+        System.out.println("non Reverse array  -> " + Arrays.toString(arr));
         reverseArr(arr);
+        System.out.println("Reverse arr -> "+ Arrays.toString(arr));
     }
 
 
