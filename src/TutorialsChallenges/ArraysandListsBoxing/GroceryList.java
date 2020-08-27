@@ -6,6 +6,10 @@ public class GroceryList {
 
     private  static ArrayList<String> groceryList = new ArrayList<String>();
 
+    public static ArrayList<String> getGroceryList() {
+        return groceryList;
+    }
+
     public void addItems (String item) {
 
         groceryList.add(item);
@@ -31,14 +35,16 @@ public class GroceryList {
         groceryList.remove(item);
     }
 
-    public String findItem(String item) {
+    private int findItem(String item) {
 
-        boolean exists = groceryList.contains(item);
-        int position = groceryList.indexOf(item);
+        return groceryList.indexOf(item);
+    }
 
+    public boolean onFile(String searchItem) {
+        int position = findItem(searchItem);
         if (position >= 0) {
-            return groceryList.get(position);
+            return true;
         }
-        return null;
+        return false;
     }
 }
