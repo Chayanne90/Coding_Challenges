@@ -29,11 +29,11 @@ public class App2 {
     /*sort array*/
     public static int[] getSortedArr(int [] arr) {
 
-        int [] sortArr = new int[arr.length];
-
-        for (int i = 0; i < arr.length; i++) {
-            sortArr[i] = arr[i];
-        }
+//        int [] sortArr = new int[arr.length];
+//        for (int i = 0; i < arr.length; i++) {
+//            sortArr[i] = arr[i];
+//        }
+        int [] sortArr = Arrays.copyOf(arr, arr.length);
 
         boolean trigger = true;
         int temp;
@@ -41,7 +41,7 @@ public class App2 {
             trigger = false;
             for (int i = 0; i < sortArr.length - 1; i++) {
 
-                if (sortArr[i] < sortArr[i+1]) {
+                if (sortArr[i] > sortArr[i+1]) {
                     temp = sortArr[i];
                     sortArr[i] = sortArr[i+1];
                     sortArr[i+1] = temp;
@@ -66,9 +66,5 @@ public class App2 {
         for (int i = 0; i < sortedArr.length; i++) {
             System.out.println("Index " +sortedArr[i] +" -> "+ sortedArr[i]);
         }
-
-
-
-
     }
 }
