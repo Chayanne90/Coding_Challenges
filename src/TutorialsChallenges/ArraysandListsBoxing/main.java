@@ -13,7 +13,7 @@ public class main {
         int choice =0;
         printInstrutions();
         while (!quit) {
-            System.out.println("enter you choice: ");
+            System.out.println("Enter you choice: ");
             choice = in.nextInt();
             in.nextLine();
 
@@ -41,7 +41,6 @@ public class main {
     }
 
     public static void printInstrutions() {
-
         System.out.println("\n Press");
         System.out.println("\t 0 - To print choice options.");
         System.out.println("\t 1 - To print the list of grocery items.");
@@ -52,25 +51,24 @@ public class main {
         System.out.println("\t 6 - To quit the applciation \r");
     }
 
-    public static void addItem(){
+    public static void addItem() {
         System.out.println("Please enter the grocery item");
         groceryList.addItems(in.nextLine());
     }
 
-    public static void modifyITem(){
-        System.out.println("Enter item number");
-        int itemnum = in.nextInt();
-        in.nextLine();
+    public static void modifyITem() {
+        System.out.println("Enter the item you want to replace");
+        String oldItem = in.nextLine();
         System.out.println("Enter replacement item");
         String newItem = in.nextLine();
-        groceryList.updateGrocery(itemnum-1,newItem);
+        groceryList.updateGrocery(oldItem, newItem);
     }
 
     public static void removeItem() {
-        System.out.println("Enter item number");
-        int itemnum = in.nextInt();
-        in.nextLine();
-        groceryList.removeGrocery(itemnum-1);
+        System.out.println("Enter the item you want ot remove");
+        String item = in.nextLine();
+        groceryList.removeGrocery(item);
+        System.out.println("Your item was remove");
     }
 
     public static void searchForItem() {
@@ -82,6 +80,4 @@ public class main {
             System.out.println(searchItem + " is not in the list");
         }
     }
-
-
 }
