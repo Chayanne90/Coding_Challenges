@@ -30,7 +30,7 @@ class Jaws extends movie{
     }
 }
 
-class IndependenceDay extends movie{
+class IndependenceDay extends movie {
     public IndependenceDay() {
         super("IndependenceDay");
     }
