@@ -28,7 +28,6 @@ public class healthyBurger extends Hamburger {
 
         double healthyBurgerPrice = getPrice();
 
-
         if (this.healthyburgarAdditon1 != null) {
             healthyBurgerPrice += this.healthyBurgerAdditioniprice1;
             setPrice(healthyBurgerPrice);
