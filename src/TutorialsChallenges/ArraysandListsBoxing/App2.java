@@ -52,12 +52,28 @@ public class App2 {
         return sortArr;
     }
 
+
+    /*Reverse array*/
+    private static void reverseArr(int [] numArr) {
+
+        
+        for (int i = 0; i < numArr.length; i++) {
+            System.out.println("array index - > " + numArr[i]);
+        }
+
+        System.out.println("this is the reverse array \r");
+        for (int i = numArr.length-1; i > 0 ; i--) {
+            System.out.println("array index - > " + numArr[i]);
+        }
+    }
+
     public static void main(String[] args) {
 
         System.out.println("Please enter the size of the array. \r");
         int size = in.nextInt();
         int [] arr = getArray(size);
 
+        /*
         System.out.println("This is your array unsorted");
         printArr(arr);
 
@@ -66,5 +82,11 @@ public class App2 {
         for (int i = 0; i < sortedArr.length; i++) {
             System.out.println("Index " +sortedArr[i] +" -> "+ sortedArr[i]);
         }
+        */
+
+
+        reverseArr(arr);
     }
+
+
 }
