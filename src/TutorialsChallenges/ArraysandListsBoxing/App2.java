@@ -52,7 +52,6 @@ public class App2 {
         return sortArr;
     }
 
-
     /*Reverse array*/
     private static void reverseArr(int [] numArr) {
         /*
@@ -65,6 +64,7 @@ public class App2 {
             System.out.println("array index - > " + numArr[i]);
         }
          */
+
          int maxArr = numArr.length - 1;
          int halfArr = numArr.length / 2;
          int temp = 0;
