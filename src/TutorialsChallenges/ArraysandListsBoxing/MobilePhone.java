@@ -28,13 +28,16 @@ public class MobilePhone {
 
     public boolean updateContact(Contact oldContact, Contact newcontact) {
         int found = searchContact(oldContact);
-        if (found > 0){
+
+        if (found < 0) {
             System.out.println(oldContact.getName() + " Was Not fund");
             return false;
         }
+
         this.contacts.set(found, newcontact)
         System.out.println(oldContact.getName() + ", was replace with "+ newcontact.getName());
         return true;
+
     }
 
 
@@ -48,6 +51,30 @@ public class MobilePhone {
     contacts.add(contact);
     return true;
    }
+
+   public boolean removeContact(Contact contact){
+       int found = searchContact(contact);
+
+       if (found < 0) {
+           System.out.println(contact.getName() + " Was Not fund");
+           return false;
+       }
+
+       this.contacts.remove(contact);
+       System.out.println(contact.getName() +  ", was Deleted");
+       return true;
+    }
+
+   public  String queryContact (Contact contact) {
+
+        if (searchContact(contact) >=0){
+            return contact.getName();
+        }
+        return null;
+   }
+
+
+
 
 
 
