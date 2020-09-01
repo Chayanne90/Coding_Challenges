@@ -24,7 +24,17 @@ public class MobilePhone {
             }
         }
         return -1;
+    }
 
+    public boolean updateContact(Contact oldContact, Contact newcontact) {
+        int found = searchContact(oldContact);
+        if (found > 0){
+            System.out.println(oldContact.getName() + " Was Not fund");
+            return false;
+        }
+        this.contacts.set(found, newcontact)
+        System.out.println(oldContact.getName() + ", was replace with "+ newcontact.getName());
+        return true;
     }
 
 
