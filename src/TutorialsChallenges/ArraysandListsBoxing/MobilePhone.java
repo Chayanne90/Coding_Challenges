@@ -87,8 +87,8 @@ public class MobilePhone {
         String result = "";
        for (int i = 0; i < this.contacts.size(); i++) {
 
-           System.out.println(" Name:  "+ this.contacts.get(i).getName() +
-                              "->"+this.contacts.get(i).getPhone());
+           System.out.println("Name:  "+ this.contacts.get(i).getName() +
+                              " Phone: "+this.contacts.get(i).getPhone());
        }
    }
 
