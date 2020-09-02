@@ -38,7 +38,7 @@ public class App3 {
                     updateContact();
                     break;
                 case 5:
-                    queryContact();
+
                     break;
             }
         }
@@ -68,8 +68,33 @@ public class App3 {
         if (mobilePhone.addContact(newContact)) {
             System.out.println("New contact added: " +name +","+phone);
         }
+    }
 
-        
+    private static void updateContact() {
+
+        System.out.println("Enter existing conctact name");
+        String name = in.nextLine();
+        Contact exsitingContact = mobilePhone.queryContact(name);
+
+        if (exsitingContact == null){
+            System.out.println("Contact not found!");
+            return;
+        }
+
+        System.out.println("Enter new contact name");
+        String newName = in.nextLine();
+        System.out.println("Enter new contact phone number");
+        String newPhone = in.nextLine();
+        Contact newContact = Contact.createContact(newName, newPhone);
+
+        if(mobilePhone.updateContact(exsitingContact, newContact)) {
+
+            System.out.println("Successfully Updated record!");
+        } else {
+
+            System.out.println("Error Updating record");
+        }
 
     }
+
 }
