@@ -38,23 +38,25 @@ public class App3 {
                     updateContact();
                     break;
                 case 5:
-
+                    removeContact();
+                    break;
+                case 6:
+                    queryContact();
                     break;
             }
         }
     }
 
     private static void printActions() {
-        System.out.println("\n Available Astions: \npress");
+        System.out.println("Select from menu");
         System.out.println("0 - Shutdown\n"+
                            "1 - Print Contact\n"+
                            "2 - Add Contact\n" +
-                           "3 - Update Contact\n "+
-                           "4 - Remove Contact\n "+
-                           "5 - Query Existiing Contact\n "+
-                           "6 - Print Actions ");
+                           "3 - Update Contact\n"+
+                           "4 - Remove Contact\n"+
+                           "5 - Query Existing Contact");
 
-        System.out.println("Choose you Action: ");
+
     }
 
     private static void addNewContact() {
@@ -96,5 +98,43 @@ public class App3 {
         }
 
     }
+
+    private static void removeContact() {
+
+        System.out.println("Enter existing conctact name");
+        String name = in.nextLine();
+        Contact exsitingContact = mobilePhone.queryContact(name);
+
+        if (exsitingContact == null) {
+            System.out.println("Contact not found!");
+            return;
+        }
+
+        if (mobilePhone.removeContact(exsitingContact)) {
+
+            System.out.println("Successfully deleted");
+
+        } else {
+
+            System.out.println("Error deleting contect");
+        }
+
+    }
+
+
+    private static void queryContact() {
+
+        System.out.println("Enter existing conctact name");
+        String name = in.nextLine();
+        Contact exsitingContact = mobilePhone.queryContact(name);
+
+        if (exsitingContact == null) {
+            System.out.println("Contact not found!");
+            return;
+        }
+
+        System.out.println("Name: "+ exsitingContact.getName() + " Phone number "+ exsitingContact.getPhone());
+    }
+
 
 }
