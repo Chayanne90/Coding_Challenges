@@ -41,7 +41,7 @@ public class main {
        return ((a >= 13 && a<= 19) || (b >= 13 && b <= 19) || (c >= 13 &&  c <=19));
    }
 
-    /*Warmup-1 > loneTeen*
+    /*Warmup-1 > loneTeen
     We'll say that a number is "teen" if it is in the range 13..19 inclusive. Given 2 int values, return true if one or the other is teen, but not both.
     */
     public static boolean loneTeen(int a, int b) {
@@ -52,13 +52,38 @@ public class main {
         return (aTeen && !bTeen) || (!aTeen && bTeen);
     }
 
+    /* Warmup-1 > delDel
+    Given a string, if the string "del" appears starting at index 1, return a string where that "del" has been deleted.
+    Otherwise, return the string unchanged
+    */
+    public static String delDel(String str) {
+
+//        String newStr = "";
+//        String firstIndex = str.substring(0,1);
+//        String restOfIndex = str.substring(4, str.length());
+//        newStr = firstIndex + restOfIndex;
+
+
+        String newStr = "";
+        if (str.substring(1,4) == "del") {
+            String firstIndex = str.substring(0,1);
+            String restOfIndex = str.substring(4, str.length());
+            newStr = firstIndex + restOfIndex;
+        } else {
+            newStr = str;
+        }
+
+    return newStr;
+
+    }
+
 
 
 
     public static void main(String[] args) {
 
 
-        System.out.println(loneTeen(15,15));
+        System.out.println(delDel("add"));
     }
 
 }
