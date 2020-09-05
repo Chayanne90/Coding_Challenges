@@ -105,6 +105,28 @@ public class main {
 
     }
 
+    /* Warmup-1 > intMax
+    * Given three int values, a b c, return the largest.
+     */
+
+    public  static int intMax(int a, int b, int c) {
+
+        int max;
+
+        // First check between a and b
+        if (a > b) {
+            max = a;
+        } else {
+            max = b;
+        }
+
+        // Now check between max and c
+        if (c > max) {
+            max = c;
+        }
+        return max;
+    }
+
 
 
 
@@ -112,7 +134,7 @@ public class main {
     public static void main(String[] args) {
 
 
-        System.out.println(startOz(""));
+        System.out.println(intMax(3,0,9));
     }
 
 }
