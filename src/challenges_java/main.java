@@ -20,7 +20,7 @@ public class main {
 
         if (temp1 < 0 && temp2 >100){
             return true;
-        } else if (temp1 > 0 && temp2 <100){
+        } else if (temp1 > 0 && temp2 <100) {
             return true;
         } else {
             return false;
@@ -62,19 +62,23 @@ public class main {
 //        String firstIndex = str.substring(0,1);
 //        String restOfIndex = str.substring(4, str.length());
 //        newStr = firstIndex + restOfIndex;
+//        if (str.length()>=4 && str.substring(1, 4).equals("del")) {
+//            // First char + rest of string starting at 4
+//            return str.substring(0, 1) + str.substring(4);
+//        }
+//        // Otherwise return the original string.
+//        return str;
 
+        if (str.length()>=4 && str.substring(1,4) == "del") {
 
-        String newStr = "";
-        if (str.substring(1,4) == "del") {
             String firstIndex = str.substring(0,1);
-            String restOfIndex = str.substring(4, str.length());
-            newStr = firstIndex + restOfIndex;
+            String restOfIndex = str.substring(4);
+            return  firstIndex + restOfIndex;
+
         } else {
-            newStr = str;
+
+            return str;
         }
-
-    return newStr;
-
     }
 
 
@@ -83,7 +87,7 @@ public class main {
     public static void main(String[] args) {
 
 
-        System.out.println(delDel("add"));
+        System.out.println(delDel("aHello"));
     }
 
 }
