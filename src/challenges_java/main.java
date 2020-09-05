@@ -58,17 +58,6 @@ public class main {
     */
     public static String delDel(String str) {
 
-//        String newStr = "";
-//        String firstIndex = str.substring(0,1);
-//        String restOfIndex = str.substring(4, str.length());
-//        newStr = firstIndex + restOfIndex;
-//        if (str.length()>=4 && str.substring(1, 4).equals("del")) {
-//            // First char + rest of string starting at 4
-//            return str.substring(0, 1) + str.substring(4);
-//        }
-//        // Otherwise return the original string.
-//        return str;
-
         if (str.length()>=4 && str.substring(1,4) == "del") {
 
             String firstIndex = str.substring(0,1);
@@ -81,13 +70,28 @@ public class main {
         }
     }
 
+    /* Warmup-1 > mixStart
+       Return true if the given string begins with "mix", except the 'm' can be anything, so "pix", "9ix" .. all count.
+    * */
+
+    public static boolean mixStart(String str) {
+
+        if (str.length() < 3 || str.equals("")){
+            return false;
+        } else if ((str.substring(0,3).equals("mix") || (str.substring(1,3).equals("ix")))) {
+            return true;
+        }
+        return false;
+    }
+
+
 
 
 
     public static void main(String[] args) {
 
 
-        System.out.println(delDel("aHello"));
+        System.out.println(mixStart("ni"));
     }
 
 }
