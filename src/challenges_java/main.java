@@ -128,13 +128,33 @@ public class main {
     }
 
 
+    /* Warmup-1 > close10
+    Given 2 int values, return whichever value is nearest to the value 10, or return 0 in the event of a tie.
+    Note that Math.abs(n) returns the absolute value of a number.
+    * */
+
+    public static int close10(int a, int b) {
+
+        int x = a -10;
+        int y = b -10;
+
+        if (Math.abs(x) != Math.abs(y)) {
+            if (Math.abs(x) < Math.abs(y)) {
+                return a;
+            } else {
+                return b;
+            }
+        } else {
+            return 0;
+        }
+    }
 
 
 
     public static void main(String[] args) {
 
 
-        System.out.println(intMax(3,0,9));
+        System.out.println(close10(20,13));
     }
 
 }
