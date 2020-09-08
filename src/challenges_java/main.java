@@ -157,9 +157,32 @@ public class main {
     public static boolean in3050(int a, int b) {
 
         return (((a >= 30 && a <= 40) && (b >= 30 && b <= 40)) || ((a >= 40 && a <= 50) && (b >= 40 && b <= 50)));
-
     }
 
+    /* Warmup-1 > max1020
+    * Given 2 positive int values, return the larger value that is in the range 10..20 inclusive,
+    * or return 0 if neither is in that range.
+    */
+
+    public static int max1020(int a, int b) {
+
+        int max = 0;
+
+        if ((a >= 10 && a <= 20) || (b >= 10 && b <= 20)) {
+
+            if (a > b) {
+
+                max = a;
+            } else  {
+
+                max = b;
+            }
+
+        }
+
+        return max ;
+
+    }
 
 
 
