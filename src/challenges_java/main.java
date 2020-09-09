@@ -166,21 +166,16 @@ public class main {
 
     public static int max1020(int a, int b) {
 
-        int max = 0;
-
-        if ((a >= 10 && a <= 20) || (b >= 10 && b <= 20)) {
-
-            if (a > b) {
-
-                max = a;
-            } else  {
-
-                max = b;
-            }
-
+        if (b > a) {
+            int temp = a;
+            a = b;
+            b = temp;
         }
 
-        return max ;
+        // Knowing a is bigger, just check a first
+        if (a >= 10 && a <= 20) return a;
+        if (b >= 10 && b <= 20) return b;
+        return 0;
 
     }
 
@@ -189,7 +184,7 @@ public class main {
     public static void main(String[] args) {
 
 
-        System.out.println(in3050(30,41));
+        System.out.println(max1020(10,23));
     }
 
 }
