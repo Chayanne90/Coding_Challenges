@@ -1,5 +1,7 @@
 package challenges_java;
 
+import javax.swing.*;
+
 public class main {
 
     /* Warmup-1 > startHi
@@ -212,13 +214,43 @@ public class main {
         return(a % 10 == b % 10);
     }
 
+    /* Warmup-1 > endUp
+    * Given a string, return a new string where the last 3 chars are now in upper case. If the string has
+    * less than 3 chars, uppercase whatever is there. Note that str.toUpperCase() returns the uppercase
+    * version of a string.
+    */
+
+    public static String endUp(String str) {
+
+        String newStr = "";
+        int check,lastFristPart;
+
+        check = lastFristPart = 0;
+
+        if (str.length() < 3 ) {
+            newStr = str.toUpperCase();
+        } else {
+            for (int i = 0; i <= str.length(); i++) {
+                check = str.length() - i;
+                if (check == 3) {
+                    newStr =  str.substring(i, str.length()).toUpperCase();
+                    lastFristPart = i;
+                    break;
+                }
+            }
+        }
+        newStr = str.substring(0,lastFristPart) + newStr;
+        return newStr ;
+    }
+
+
 
 
 
 
     public static void main(String[] args) {
 
-        System.out.println(lastDigit(17,7));
+        System.out.println(endUp("people"));
     }
 
 }
