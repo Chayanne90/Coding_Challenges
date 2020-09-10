@@ -179,12 +179,35 @@ public class main {
 
     }
 
+    /* Warmup-1 > stringE
+    *  Return true if the given string contains between 1 and 3 'e' chars.
+    */
+
+    public static boolean stringE(String str) {
+
+        int temp = 0;
+        if (str == "") {
+            return false;
+        } else {
+            for (int i = 0; i < str.length(); i++) {
+
+                if (str.charAt(i) == 'e') {
+                    temp = temp+ 1;
+                }
+            }
+            if (temp >= 1 && temp <=3){
+                return true;
+            }
+            return false;
+        }
+    }
+
+
 
 
     public static void main(String[] args) {
 
-
-        System.out.println(max1020(10,23));
+        System.out.println(stringE("Heeell"));
     }
 
 }
