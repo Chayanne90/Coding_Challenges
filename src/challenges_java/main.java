@@ -243,6 +243,27 @@ public class main {
         return newStr ;
     }
 
+    /* Warmup-1 > everyNth
+       Given a non-empty string and an int N, return the string made starting with char 0, and then every Nth
+        char of the string. So if N is 3, use char 0, 3, 6, ... and so on. N is 1 or more
+    */
+
+    public static String everyNth(String str, int n) {
+
+        StringBuilder buildStr = new StringBuilder();
+        String newStr = "";
+        buildStr.append(str.charAt(0));
+
+        for (int i = 1; i < str.length(); i++) {
+            if (i % n == 0) {
+                buildStr.append(str.charAt(i));
+            }
+        }
+        newStr = buildStr.toString();
+        return newStr;
+    }
+
+
 
 
 
@@ -250,7 +271,7 @@ public class main {
 
     public static void main(String[] args) {
 
-        System.out.println(endUp("people"));
+        System.out.println(everyNth("abcdefg", 3));
     }
 
 }
