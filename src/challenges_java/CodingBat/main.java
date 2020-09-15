@@ -299,20 +299,25 @@ public class main {
         return newStr;
     }
 
+    /* Warmup-2 > countXX
+    *  Count the number of "xx" in the given string. We'll say that overlapping is allowed, so "xxx" contains 2 "xx".
+    */
+     public static int countXX(String str) {
 
+         int amount= 0;
+         for (int i =0; i< str.length()-1; i++) {
 
-
-
-
-
-
-
-
+             if (str.substring(i, i+2).equals("xx")) {
+                 amount  = 1 + amount;
+             }
+         }
+         return amount;
+    }
 
 
     public static void main(String[] args) {
 
-        System.out.println(frontTimes("Abc", 3));
+        System.out.println(countXX("xxx"));
     }
 
 }
