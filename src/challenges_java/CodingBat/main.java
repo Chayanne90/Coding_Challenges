@@ -362,12 +362,62 @@ public class main {
 
     }
 
+    /* Warmup-2 > last2
+    * Given a string, return the count of the number of times that a substring length 2 appears in the
+    * string and also as the last 2 chars of the string, so "hixxxhi" yields 1 (we won't count the end substring).
+    */
+
+    public static String last2(String str) {
+
+        return str.substring(2);
+
+    }
+
+
+    /* Warmup-2 > arrayCount9
+     * Given an array of ints, return the number of 9's in the array.
+     */
+
+    public int arrayCount9(int[] nums) {
+
+        int count = 0;
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] == 9){
+                count++;
+            }
+        }
+        return count;
+    }
+
+    /* Warmup-2 > arrayFront9
+    *  Given an array of ints, return true if one of the first 4 elements in the array is a 9.
+    *  The array length may be less than 4
+    * */
+
+    public static boolean arrayFront9(int[] nums) {
+
+
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] == 9 && i < 4){
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+
+
+
+
+
+
 
 
 
     public static void main(String[] args) {
 
-        System.out.println(stringBits("Hi"));
+        System.out.println(last2("hixxhi"));
     }
 
 }
