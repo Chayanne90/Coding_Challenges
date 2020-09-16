@@ -331,9 +331,29 @@ public class main {
         return str.substring(i+1, i+2).equals("x");
     }
 
+    /* Warmup-2 > stringBits
+     *  Given a string, return a new string made of every other char starting with the first, so "Hello" yields "Hlo".
+     */
+
+    public static String stringBits(String str) {
+
+        StringBuilder st = new StringBuilder();
+        for (int i = 0; i < str.length(); i++) {
+
+            if (i % 2 ==0) {
+                st.append(str.charAt(i));
+            }
+        }
+        String newstr = st.toString();
+        return newstr;
+    }
+
+
+
+
     public static void main(String[] args) {
 
-        System.out.println(doubleX("axaxax"));
+        System.out.println(stringBits("Hi"));
     }
 
 }
