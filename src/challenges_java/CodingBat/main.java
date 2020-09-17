@@ -417,13 +417,53 @@ public class main {
         } else {
             for (int i = 0; i < nums.length-1; i++) {
 
-                if (nums[i] == 1 && nums[i+1]==2 && nums[i+2]==3){
+                if (nums[i] == 1 && nums[i+1]==2 && nums[i+2]==3) {
                     return true;
                 }
             }
         }
         return false;
     }
+
+    /* Warmup-2 > stringMatch
+    *  Given 2 strings, a and b, return the number of the positions where they contain the same length 2 substring.
+    *  So "xxcaazz" and "xxbaaz" yields 3, since the "xx", "aa", and "az" substrings appear in the same place in both strings.
+    */
+
+    public static int stringMatch(String a, String b) {
+
+        int len = Math.min(a.length(), b.length());
+        int count =0;
+
+        for (int i = 0; i < len-1; i++) {
+
+            if (a.substring(i, i+2).equals(b.substring(i,i+2))) {
+                count++;
+            }
+
+        }
+
+        return count;
+    }
+
+    /* Warmup-2 > stringX
+    * Given a string, return a version where all the "x" have been removed. Except an "x" at the very start or
+    *  end should not be removed.
+    */
+
+    public static String stringX(String str) {
+
+        String result = "";
+        for (int i=0; i<str.length(); i++) {
+            // Only append the char if it is not the "x" case
+            if (!(i > 0 && i < (str.length()-1) && str.substring(i, i+1).equals("x"))) {
+                result = result + str.substring(i, i+1); // Could use str.charAt(i) here
+            }
+        }
+        return result;
+
+    }
+
 
 
 
@@ -435,7 +475,12 @@ public class main {
 
     public static void main(String[] args) {
 
-        System.out.println(last2("hixxhi"));
+       //System.out.println(stringMatch("hixxhi"));
+
+        String x = "hello";
+        System.out.println(x.substring(2,4));
+
+
     }
 
 }
