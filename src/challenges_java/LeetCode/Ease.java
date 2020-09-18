@@ -33,15 +33,21 @@ public class Ease {
         return arr;
     }
 
+    /*1108. Defanging an IP Address
+    * Given a valid (IPv4) IP address, return a defanged version of that IP address.
+    * A defanged IP address replaces every period "." with "[.]".
+    * */
+
+    public static String defangIPaddr(String address) {
+
+        address = address.replaceAll("[^a-zA-Z0-9]", "[.]");
+        return address;
+
+    }
+
     public static void main(String[] args) {
 
-        int []arr = {1,1,1,1,1};
-
-        arr = runningSum(arr);
-
-        for (int i: arr){
-            System.out.print(i + " ");
-        }
+        System.out.println(defangIPaddr("255.100.50.0"));
 
     }
 
