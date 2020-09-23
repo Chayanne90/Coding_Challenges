@@ -1,6 +1,8 @@
 package challenges_java.LeetCode;
 
 
+import java.util.HashMap;
+
 /* Ease LeetCode challenges*/
 public class Ease {
 
@@ -62,7 +64,8 @@ public class Ease {
     * Output: Because nums[0] + nums[1] == 9, we return [0, 1].
     */
 
-    public static int[] twoSum(int[] nums, int target) {
+    /* This solution is not Optimize*/
+    public static int[] twoSum1(int[] nums, int target) {
 
         int [] newArr = new int[2];
         int temp = 0;
@@ -79,10 +82,29 @@ public class Ease {
         return newArr;
     }
 
+    public static int[] twoSum(int[] nums, int target) {
+
+        HashMap<Integer, Integer> items = new HashMap<Integer, Integer>();
+        int result = 0;
+        for (int i = 0; i < nums.length; i++) {
+
+            result = target - nums[i];
+            if (items.containsKey(result)) {
+                return new int [] {items.get(result), i};
+            } else {
+                items.put(nums[i], i);
+            }
+
+        }
+        return new int[] {};
+    }
+
     public static void main(String[] args) {
 
-        int [] arr = {3,0,4,9,6};
-        int target = 10;
+        int [] arr = {3,2,4};
+        int target = 6;
+
+        //twoSum(arr,target);
         int [] arr2 =  twoSum(arr,target);
         for (int i: arr2) {
 
