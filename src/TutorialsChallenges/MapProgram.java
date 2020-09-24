@@ -31,8 +31,35 @@ public class MapProgram {
             System.out.println("Java added Successfully");
         }*/
 
-
         // keySet() it return all the key in the hashMap
+        for (String key: languages.keySet()) {
+            System.out.println("Key: "+key+ " Values: " + languages.get(key));
+        }
+
+
+        System.out.println("==================================================================");
+
+        if (languages.remove("Python", "an Interpreted, Object Oriented language")){
+
+            System.out.println("python remove");
+        } else {
+            System.out.println("python not remove because the key/value dont match");
+        }
+
+        for (String key: languages.keySet()) {
+            System.out.println("Key: "+key+ " Values: " + languages.get(key));
+        }
+
+        // replace(key, old value, new value)  for the replace method to work properly the
+        // the old value have to match if is not then replace() will return false otherwise true
+        System.out.println("==================================================================");
+        if (languages.replace("Basic", "Biginners All purposes Symbolic Instruction Code", " Senior All purposes Symbolic Instruction Code")){
+
+            System.out.println("Basic was replace");
+        } else {
+            System.out.println("basic was not replaced");
+        }
+
         for (String key: languages.keySet()) {
             System.out.println("Key: "+key+ " Values: " + languages.get(key));
         }
