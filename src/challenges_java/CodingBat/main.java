@@ -582,6 +582,17 @@ public class main {
         return "<"+tag+">"+word+"</"+tag+">";
     }
 
+    /* String-1 > makeOutWord
+    *  Given an "out" string length 4, such as "<<>>", and a word, return a new string where the word is in the middle
+    *  of the out string, e.g. "<<word>>". Note: use str.substring(i, j) to extract the String starting at index i and
+    * going up to but not including index j
+    */
+
+    public static String makeOutWord(String out, String word) {
+
+        return out.substring(0,2)+word+out.substring(2,out.length());
+    }
+
 
 
 
@@ -592,8 +603,8 @@ public class main {
 
 
     public static void main(String[] args) {
-        int [] arr = {6,6,2};
-        System.out.println(array667(arr));
+
+        System.out.println(makeOutWord("<<>>", "yay"));
 
 
     }
