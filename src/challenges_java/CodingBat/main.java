@@ -601,7 +601,6 @@ public class main {
     public static String extraEnd(String str) {
 
         String newStr ="";
-
         if (str.length() < 2) {
 
             for(int i =0; i < 3; i++) {
@@ -614,14 +613,119 @@ public class main {
             }
         }
         return newStr;
+    }
+
+    /* String-1 > firstTwo
+    *  Given a string, return the string made of its first two chars, so the String "Hello" yields "He".
+    * If the string is shorter than length 2, return whatever there is, so "X" yields "X", and the empty string ""
+    * yields the empty string "". Note that str.length() returns the length of a string.
+    */
+
+    public static String firstTwo(String str) {
+
+        String newStr = "";
+
+        if (str.length()< 2 || str == ""){
+            newStr = str;
+        } else {
+            newStr = str.substring(0,2);
+        }
+
+      return newStr;
+    }
+
+    /* String-1 > firstHalf
+        Given a string of even length, return the first half. So the string "WooHoo" yields "Woo".
+    */
+
+    public static String firstHalf(String str) {
+
+        String newStr = "";
+
+        if (str.length() % 2 ==0) {
+
+            newStr = str.substring(0,str.length()/2);
+        }
+        return newStr;
+    }
+
+    /* String-1 > withoutEnd
+    *  Given a string, return a version without the first and last char, so "Hello" yields "ell".
+    *  The string length will be at least 2.
+    * */
+    public static String withoutEnd(String str) {
+
+        String newStr = "";
+        if (str.length()< 2){
+            newStr= str;
+        } else {
+            newStr = str.substring(1, str.length()-1);
+        }
+
+        return newStr;
+    }
+
+    /*String-1 > comboString
+    * Given 2 strings, a and b, return a string of the form short+long+short, with the shorter string
+    * on the outside and the longer string on the inside. The strings will not be the same length,
+    * but they may be empty (length 0).
+    */
+
+    public static String comboString(String a, String b) {
+
+        String newStr = "";
+
+        if (a.length() < b.length()){
+            newStr  = a+b+a;
+        } else {
+            newStr  = b+a+b;
+        }
+        return newStr;
+    }
+
+    /* String-1 > nonStart
+    *  Given 2 strings, return their concatenation, except omit the first char of each.
+    *  The strings will be at least length 1.
+    *  */
+
+    public static String nonStart(String a, String b) {
+
+        String newStr = "";
+        if (a.length() <= 1 && b.length() <=1) {
+
+            newStr = "";
+        } else {
+
+            newStr = a.substring(1,a.length())+b.substring(1,b.length());
+        }
+        return newStr;
+    }
+
+    /* String-1 > left2
+    *  Given a string, return a "rotated left 2" version where the first 2 chars are moved to the end.
+    *  The string length will be at least 2.
+    */
+
+    public static String left2(String str) {
+
+        String newStr = "";
+        if (str.length() <2){
+            newStr = str+str;
+        } else {
+            newStr = str.substring(str.length()-2, str.length())+str.substring(0,str.length()-2);
+        }
+
+        return newStr;
 
     }
 
 
 
+
+
     public static void main(String[] args) {
 
-        System.out.println(extraEnd("hello"));
+        System.out.println(left2("12345"));
 
 
     }
