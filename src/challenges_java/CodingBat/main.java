@@ -716,17 +716,78 @@ public class main {
         }
 
         return newStr;
-
     }
 
+    /* String-1 > theEnd
+    *  Given a string, return a string length 1 from its front, unless front is false, in which case return a
+    *  string length 1 from its back. The string will be non-empty.
+    */
 
+    public static String theEnd(String str, boolean front) {
+
+        String newStr="";
+        if (front) {
+            newStr = str.substring(0,1);
+        } else {
+            newStr = str.substring(str.length()-1,str.length());
+        }
+        return newStr;
+    }
+
+    /* String-1 > withouEnd2
+    *  Given a string, return a version without both the first and last char of the string.
+    * The string may be any length, including 0.
+    */
+
+    public static String withouEnd2(String str) {
+
+        String newStr="";
+        if(str.length()<=2) {
+            newStr = "";
+        } else {
+            newStr = str.substring(1,str.length()-1);
+        }
+
+        return newStr;
+    }
+
+    /* String-1 > middleTwo
+    *  Given a string of even length, return a string made of the middle two chars, so the string
+    *  "string" yields "ri". The string length will be at least 2.
+    */
+
+    public static String middleTwo(String str) {
+
+        String newStr="";
+        int middle = str.length()/2;
+        if (str.length() <=2) {
+            newStr = "";
+        } else {
+            newStr = str.substring(middle-1,middle+1);
+        }
+        return newStr;
+    }
+
+    /* String-1 > endsLy
+    *  Given a string, return true if it ends in "ly".
+    */
+    public static boolean endsLy(String str) {
+        boolean result = false;
+        if (str.length() <=1 || str == " ") {
+            result = false;
+        } else if ((str.substring(str.length()-2,str.length()).equals("ly"))){
+            result = true;
+        }
+        return result;
+    }
+
+    
 
 
 
     public static void main(String[] args) {
 
-        System.out.println(left2("12345"));
-
+        System.out.println(endsLy("string"));
 
     }
 
