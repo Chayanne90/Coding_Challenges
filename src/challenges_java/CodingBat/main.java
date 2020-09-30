@@ -1,6 +1,8 @@
 package challenges_java.CodingBat;
 
 import javax.swing.*;
+import java.util.HashMap;
+import java.util.Map;
 
 public class main {
 
@@ -781,13 +783,36 @@ public class main {
         return result;
     }
 
+    /* Map-1 > mapBully
+    *  Modify and return the given map as follows: if the key "a" has a value, set the key "b"
+    * to have that value, and set the key "a" to have the value "". Basically "b" is a bully,
+    * taking the value and replacing it with the empty string.
+    */
+
+    public static Map<String, String> mapBully (Map<String, String> map) {
+
+        if (map.containsKey("a")) {
+
+            map.put("b", map.get("a"));
+            map.put("a", "");
+        }
+        return map;
+    }
+
     
+
+
 
 
 
     public static void main(String[] args) {
 
-        System.out.println(endsLy("string"));
+        Map<String, String> mapTest = new HashMap<>();
+
+        mapTest.put("a","asdf");
+        mapTest.put("b","test");
+
+        System.out.println(mapBully(mapTest));
 
     }
 
