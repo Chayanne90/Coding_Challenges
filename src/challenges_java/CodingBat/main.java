@@ -808,10 +808,38 @@ public class main {
     public static Map<String, String> mapShare(Map<String, String> map) {
 
         if (map.containsKey("a")) {
-
             map.put("b",map.get("a"));
         }
         map.remove("c");
+        return map;
+    }
+
+    /* Map-1 > mapAB
+    *  Modify and return the given map as follows: for this problem the map may or may not contain
+    *  the "a" and "b" keys. If both keys are present, append their 2 string values together and
+    *  store the result under the key "ab".
+    */
+
+    public static Map<String, String> mapAB(Map<String, String> map) {
+
+        if (map.containsKey("a") && map.containsKey("b")) {
+            map.put("ab", map.get("a")+map.get("b"));
+        }
+        return map;
+    }
+
+    /* Map-1 > topping1
+    *  Given a map of food keys and topping values, modify and return the map as follows: if the
+    *  key "ice cream" is present, set its value to "cherry". In all cases, set the key "bread"
+    *  to have the value "butter".
+    */
+
+    public static Map<String, String> topping1(Map<String, String> map) {
+
+        if (map.containsKey("ice cream")) {
+            map.put("ice cream", "cherry");
+        }
+        map.put("bread","butter");
         return map;
     }
 
@@ -826,10 +854,10 @@ public class main {
 
         Map<String, String> mapTest = new HashMap<>();
 
-        mapTest.put("a","asdf");
+        mapTest.put("ice cream","peanuts");
         mapTest.put("b","test");
 
-        System.out.println(mapBully(mapTest));
+        System.out.println(topping1(mapTest));
 
     }
 
