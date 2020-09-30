@@ -843,6 +843,26 @@ public class main {
         return map;
     }
 
+    /* Map-1 > topping2
+    *  Given a map of food keys and their topping values, modify and return the map as follows:
+    *  if the key "ice cream" has a value, set that as the value for the key "yogurt" also. If
+    *  the key "spinach" has a value, change that value to "nuts".
+    */
+
+    public static Map<String, String> topping2(Map<String, String> map) {
+
+        if (map.containsKey("ice cream")) {
+            map.put("yogurt", map.get("ice cream"));
+
+        }
+
+        if (map.containsKey("spinach")) {
+            map.put("spinach", "nuts");
+        }
+
+        return map;
+    }
+
 
 
 
@@ -854,10 +874,10 @@ public class main {
 
         Map<String, String> mapTest = new HashMap<>();
 
-        mapTest.put("ice cream","peanuts");
-        mapTest.put("b","test");
+        mapTest.put("spinach", "dirt");
+        mapTest.put("ice cream", "cherry");
 
-        System.out.println(topping1(mapTest));
+        System.out.println(topping2(mapTest));
 
     }
 
