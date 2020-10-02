@@ -945,19 +945,42 @@ public class main {
         return myMap;
     }
 
-    
+    /* Map-2 > wordLen
+    *  Given an array of strings, return a Map<String, Integer> containing a key for every different string in the array,
+    *  and the value is that string's length.
+    */
+
+    public static Map<String, Integer> wordLen(String[] strings) {
+
+        Map<String, Integer> myMap = new HashMap<>();
+
+            if (strings.length ==1  ) {
+                myMap.put(strings[0], strings[0].length());
+            } else {
+                for (int i = 0; i < strings.length-1; i++) {
+                    if (strings[i] != strings[i+1]) {
+                        myMap.put(strings[i], strings[i].length());
+                        myMap.put(strings[i+1],strings[i+1].length());
+                    }
+                }
+            }
+
+        return myMap;
+    }
+
+
 
 
 
 
     public static void main(String[] args) {
 
-        Map<String, String> mapTest = new HashMap<>();
-
-        mapTest.put("spinach", "dirt");
-        mapTest.put("ice cream", "cherry");
-
-        System.out.println(word0(mapTest));
+//        Map<String, String> mapTest = new HashMap<>();
+//
+//        mapTest.put("spinach", "dirt");
+//        mapTest.put("ice cream", "cherry");
+        String [] arr = {"code", "code", "code", "bug"};
+        System.out.println(wordLen(arr));
 
     }
 
