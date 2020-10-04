@@ -968,6 +968,25 @@ public class main {
         return myMap;
     }
 
+    /* Map-2 > pairs
+     * Given an array of non-empty strings, create and return a Map<String, String> as follows: for each string add its
+     * first character as a key with its last character as the value.
+     */
+
+    public static Map<String, String> pairs(String[] strings) {
+        
+        Map<String, String> myMap = new HashMap<>();
+        for (int i = 0; i < strings.length-1; i++) {
+            if (strings[i].substring(0,1) != strings[i+1].substring(0,1)) {
+
+                myMap.put(strings[i].substring(0,1), strings[i].substring(strings[i].length()-1,strings[i].length()));
+                myMap.put(strings[i+1].substring(0,1), strings[i+1].substring(strings[i+1].length()-1,strings[i+1].length()));
+            }
+        }
+        return myMap;
+    }
+
+
 
 
 
@@ -979,8 +998,9 @@ public class main {
 //
 //        mapTest.put("spinach", "dirt");
 //        mapTest.put("ice cream", "cherry");
-        String [] arr = {"code", "code", "code", "bug"};
-        System.out.println(wordLen(arr));
+        String [] arr = {"code", "bug"};
+        System.out.println(pairs(arr));
+        //pairs(arr);
 
     }
 
