@@ -986,22 +986,34 @@ public class main {
         return myMap;
     }
 
+    /* Map-2 > wordCount
+    *  The classic word-count algorithm: given an array of strings, return a Map<String, Integer> with a key for each
+    *  different string, with the value the number of times that string appears in the array.
+    */
 
+    public static  Map<String, Integer> wordCount(String[] strings) {
 
+        Map<String, Integer> myMap= new HashMap<>();
+        int index = 0;
+        while (index < strings.length) {
+            int count = 0;
 
+            for (int i = 0; i < strings.length; i++) {
+                if (strings[index].equals(strings[i])) {
+                    count++;
+                    myMap.put(strings[index], count);
+                }
+            }
+            index++;
+        }
+        return myMap;
+    }
 
 
 
     public static void main(String[] args) {
-
-//        Map<String, String> mapTest = new HashMap<>();
-//
-//        mapTest.put("spinach", "dirt");
-//        mapTest.put("ice cream", "cherry");
-        String [] arr = {"code", "bug"};
-        System.out.println(pairs(arr));
-        //pairs(arr);
-
+        String [] arr = {"a","b", "c", "b","c"};
+        System.out.println(wordCount(arr));
+        //wordCount(arr);
     }
-
 }
