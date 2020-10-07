@@ -994,9 +994,11 @@ public class main {
     public static  Map<String, Integer> wordCount(String[] strings) {
 
         Map<String, Integer> myMap= new HashMap<>();
-        int index = 0;
+        int index, count;
+        count = index = 0;
+
         while (index < strings.length) {
-            int count = 0;
+            count = 0;
 
             for (int i = 0; i < strings.length; i++) {
                 if (strings[index].equals(strings[i])) {
@@ -1009,11 +1011,71 @@ public class main {
         return myMap;
     }
 
+    /* Map-2 > firstChar
+    * Given an array of non-empty strings, return a Map<String, String> with a key for every
+    * different first character seen, with the value of all the strings starting with that character
+    * appended together in the order they appear in the array.
+    */
+
+    public static Map<String, String> firstChar(String[] strings) {
+
+        Map<String, String> myMap = new HashMap<>();
+        int x = 0;
+
+        while (x < strings.length) {
+
+            for (int i = 0; i < strings.length-1; i++) {
+                myMap.put(strings[x].substring(0, 1), strings[x] + strings[i]);
+                if (!strings[x].substring(0,1).equals(strings[i+1].substring(0,1))) {
+                    myMap.put(strings[x].substring(0, 1), strings[x] + strings[i]);
+                }
+            }
+            x++;
+        }
+        return myMap;
+    }
+
+    /* Map-2 > wordMultiple
+    *  Given an array of strings, return a Map<String, Boolean> where each different string is a key and its value
+    *  is true if that string appears 2 or more times in the array.
+    */
+
+    public static Map<String, Boolean> wordMultiple(String[] strings) {
+
+        Map<String, Boolean> myMap = new HashMap<>();
+
+        int index, count;
+        count = index = 0;
+
+        while (index < strings.length) {
+            count = 0;
+
+            for (int i = 0; i < strings.length; i++) {
+                if (strings[index].equals(strings[i])) {
+                    count++;
+                    if (count > 1) {
+                        myMap.put(strings[index], true);
+                    } else {
+                        myMap.put(strings[index], false);
+                    }
+                }
+            }
+            index++;
+        }
+        return myMap;
+
+    }
+
+
+
+
+
 
 
     public static void main(String[] args) {
-        String [] arr = {"a","b", "c", "b","c"};
-        System.out.println(wordCount(arr));
-        //wordCount(arr);
+        String [] arr = {"a", "b", "a", "c", "b"};
+        System.out.println(wordMultiple(arr));
+       // firstChar(arr);
+
     }
 }
