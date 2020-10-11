@@ -783,6 +783,17 @@ public class main {
         return result;
     }
 
+
+    /* String-1 > nTwice
+    *  Given a string and an int n, return a string made of the first and last n chars
+    *  from the string. The string length will be at least n.
+    */
+    public static String nTwice(String str, int n) {
+
+        return str.substring(0, n)+str.substring(str.length()-n,str.length());
+    }
+
+
     /* Map-1 > mapBully
     *  Modify and return the given map as follows: if the key "a" has a value, set the key "b"
     * to have that value, and set the key "a" to have the value "". Basically "b" is a bully,
@@ -1015,22 +1026,24 @@ public class main {
     * Given an array of non-empty strings, return a Map<String, String> with a key for every
     * different first character seen, with the value of all the strings starting with that character
     * appended together in the order they appear in the array.
-    */
+    *
+    * EXAMPLE:
+    * firstChar(["salt", "tea", "soda", "toast"]) → {"s": "saltsoda", "t": "teatoast"}
+      firstChar(["aa", "bb", "cc", "aAA", "cCC", "d"]) → {"a": "aaaAA", "b": "bb", "c": "cccCC", "d": "d"}
+      firstChar([]) → {}
+
+     */
 
     public static Map<String, String> firstChar(String[] strings) {
 
         Map<String, String> myMap = new HashMap<>();
-        int x = 0;
-
-        while (x < strings.length) {
-
-            for (int i = 0; i < strings.length-1; i++) {
-                myMap.put(strings[x].substring(0, 1), strings[x] + strings[i]);
-                if (!strings[x].substring(0,1).equals(strings[i+1].substring(0,1))) {
-                    myMap.put(strings[x].substring(0, 1), strings[x] + strings[i]);
-                }
+        for (String word: strings) {
+            if (!myMap.containsKey(word.substring(0,1))) {
+                myMap.put(word.substring(0,1), word);
+            }  else {
+               String temp = myMap.get(word.substring(0,1));
+               myMap.put(word.substring(0,1), temp+word);
             }
-            x++;
         }
         return myMap;
     }
@@ -1043,7 +1056,6 @@ public class main {
     public static Map<String, Boolean> wordMultiple(String[] strings) {
 
         Map<String, Boolean> myMap = new HashMap<>();
-
         int index, count;
         count = index = 0;
 
@@ -1063,19 +1075,58 @@ public class main {
             index++;
         }
         return myMap;
-
     }
 
 
+   /* String-1 > twoChar
+   *  Given a string and an index, return a string length 2 starting at the given index.
+   *  If the index is too big or too small to define a string length 2, use the first 2 chars.
+   *  The string length will be at least 2.
+   */
+
+    public static String twoChar(String str, int index) {
+
+        String newStr = "";
+        if (index <= 0 || index > str.length()) {
+            newStr =  newStr+str.substring(0,2);
+        } else {
+            newStr =  newStr+str.substring(index,str.length());
+        }
+        return newStr;
+    }
 
 
+    /* Map-2 > wordAppend
+     *  Loop over the given array of strings to build a result string like this: when a string appears
+     *  the 2nd, 4th, 6th, etc. time in the array, append the string to the result. Return the empty
+     *  string if no string appears a 2nd time.
+     */
 
+    public static void wordAppend(String[] strings) {
 
+        Map<Integer, String> myMap = new HashMap<>();
+        int count = 0;
+        String newString = "";
+        for (int i = 0; i < strings.length; i++) {
+
+            if (!myMap.containsKey(strings[i])) {
+
+                myMap.put(i, strings[i]);
+
+                if ((i % 2 == 0) && (myMap.get(i).equals(strings[i]))) {
+                    count++;
+                    newString = newString+myMap.get(i);
+                }
+            }
+        }
+
+        System.out.println(newString+ count);
+        //return newString;
+    }
 
     public static void main(String[] args) {
-        String [] arr = {"a", "b", "a", "c", "b"};
-        System.out.println(wordMultiple(arr));
-       // firstChar(arr);
 
+        String [] arr = {"a", "b", "a", "c", "a", "d", "a"};
+        System.out.println(twoChar("Hello", 1));
     }
 }
