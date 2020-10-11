@@ -22,8 +22,20 @@ public class main2 {
         return result;
     }
 
+
+    /* Array-1 > sameFirstLast
+    *  Given an array of ints, return true if the array is length 1 or more,
+    * and the first element and the last element are equal.
+    */
+    public static boolean sameFirstLast(int[] nums) {
+
+        return ((nums.length >= 1) && (nums[0] == nums[nums.length-1]));
+    }
+
+
+
     public static void main(String[] args) {
-        int [] nums = {13, 6, 1, 2, 3,6};
+        int [] nums = {1, 2, 3};
         System.out.println(firstLast6(nums));
 
     }
