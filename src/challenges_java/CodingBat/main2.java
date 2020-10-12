@@ -33,10 +33,41 @@ public class main2 {
     }
 
 
+    /* Array-1 > commonEnd
+    * Given 2 arrays of ints, a and b, return true if they have the same first element or
+    * they have the same last element. Both arrays will be length 1 or more.
+    */
+
+    public static boolean commonEnd(int[] a, int[] b) {
+
+        boolean result = false;
+
+        if (a.length <=1 || b.length <= 1) {
+
+            return (a[0] == b[0]);
+        } else {
+            for (int i = 0; i < a.length-1; i++) {
+                if ((a[i] == b[i]) || (a[a.length-1] == b[b.length-1])) {
+                    result = true;
+                }
+            }
+            return result;
+        }
+
+
+
+    }
+
+
+
+
+
 
     public static void main(String[] args) {
         int [] nums = {1, 2, 3};
-        System.out.println(firstLast6(nums));
+        int [] nums2 = {7, 3};
+        System.out.println(commonEnd(nums,nums2));
+
 
     }
 }
