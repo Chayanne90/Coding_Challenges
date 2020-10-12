@@ -65,6 +65,24 @@ public class main2 {
         return total;
     }
 
+    /*Array-1 > rotateLeft3
+    * Given an array of ints length 3, return an array with the elements "rotated left" so {1, 2, 3} yields {2, 3, 1}.
+    */
+
+    public static int[] rotateLeft3(int[] nums) {
+
+        int [] tempArr = new int[nums.length];
+        int temp = 0;
+
+        for (int i = 0; i < nums.length-1; i++) {
+            temp = nums[0];
+            tempArr[i] = nums[i+1];
+            tempArr[i+1] = temp;
+        }
+
+        return tempArr;
+    }
+
 
 
 
@@ -73,9 +91,12 @@ public class main2 {
 
     public static void main(String[] args) {
         int [] nums = {1, 2, 3};
-        int [] nums2 = {7, 3};
-        System.out.println(sum3(nums));
+        //int [] nums2 = {7, 3};
+        //System.out.println();
 
+        for (int x :rotateLeft3(nums) ) {
+            System.out.println(x);
+        }
 
     }
 }
