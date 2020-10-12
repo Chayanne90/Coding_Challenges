@@ -41,9 +41,7 @@ public class main2 {
     public static boolean commonEnd(int[] a, int[] b) {
 
         boolean result = false;
-
         if (a.length <=1 || b.length <= 1) {
-
             return (a[0] == b[0]);
         } else {
             for (int i = 0; i < a.length-1; i++) {
@@ -53,10 +51,20 @@ public class main2 {
             }
             return result;
         }
-
-
-
     }
+
+    /* Array-1 > sum3
+    *  Given an array of ints length 3, return the sum of all the elements.
+    */
+
+    public static int sum3(int[] nums) {
+        int total = 0;
+        for (int i = 0; i < nums.length; i++) {
+            total = total + nums[i];
+        }
+        return total;
+    }
+
 
 
 
@@ -66,7 +74,7 @@ public class main2 {
     public static void main(String[] args) {
         int [] nums = {1, 2, 3};
         int [] nums2 = {7, 3};
-        System.out.println(commonEnd(nums,nums2));
+        System.out.println(sum3(nums));
 
 
     }
