@@ -83,6 +83,22 @@ public class main2 {
         return tempArr;
     }
 
+    /* Array-1 > reverse3
+    *  Given an array of ints length 3, return a new array with the elements in reverse order, so {1, 2, 3} becomes {3, 2, 1}.
+    */
+    public static int[] reverse3(int[] nums) {
+
+        int [] tempArr = new int[nums.length];
+        int index = nums.length-1;
+        for (int i = 0; i < nums.length; i++) {
+            tempArr[i] = nums[index];
+            index--;
+        }
+
+        return tempArr;
+    }
+
+
 
 
 
@@ -94,8 +110,8 @@ public class main2 {
         //int [] nums2 = {7, 3};
         //System.out.println();
 
-        for (int x :rotateLeft3(nums) ) {
-            System.out.println(x);
+        for (int x :reverse3(nums) ) {
+            System.out.print(x + " ");
         }
 
     }
