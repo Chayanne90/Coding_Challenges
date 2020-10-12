@@ -1102,31 +1102,34 @@ public class main {
      *  string if no string appears a 2nd time.
      */
 
-    public static void wordAppend(String[] strings) {
+    public static String wordAppend(String[] strings) {
 
-        Map<Integer, String> myMap = new HashMap<>();
-        int count = 0;
-        String newString = "";
-        for (int i = 0; i < strings.length; i++) {
+        int count, index;
+        String newStr = "";
+        StringBuilder st = new StringBuilder();
+        count = index = 0;
 
-            if (!myMap.containsKey(strings[i])) {
+        while (index < strings.length) {
 
-                myMap.put(i, strings[i]);
+            for (int i = 0; i < strings.length; i++) {
 
-                if ((i % 2 == 0) && (myMap.get(i).equals(strings[i]))) {
-                    count++;
-                    newString = newString+myMap.get(i);
+                if ((strings[index].equals(strings[i]))) {
+
+                    newStr = strings[index];
                 }
             }
-        }
 
-        System.out.println(newString+ count);
-        //return newString;
+            index++;
+        }
+//        newStr = newStr.substring(0,newStr.length()/2);
+//        System.out.println(newStr);
+        return newStr.substring(0,newStr.length()/2);
     }
 
     public static void main(String[] args) {
 
-        String [] arr = {"a", "b", "a", "c", "a", "d", "a"};
-        System.out.println(twoChar("Hello", 1));
+        String [] arr = {"a", "b", "b", "b", "a", "c", "a", "a", "a", "b", "a"};
+        System.out.println(wordAppend(arr));
+       // wordAppend(arr);
     }
 }
