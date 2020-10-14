@@ -99,6 +99,52 @@ public class main2 {
     }
 
 
+    /*  Array-1 > maxEnd3
+    *   Given an array of ints length 3, figure out which is larger,
+    *   the first or last element in the array, and set all the other elements to be that value. Return the changed array.
+    */
+
+    public static int[] maxEnd3(int[] nums) {
+
+        int [] myNums = new int[nums.length];
+        if (nums[0] > nums[nums.length-1]) {
+
+            for (int i = 0; i < nums.length; i++) {
+                myNums[i] = nums[0];
+            }
+        } else {
+
+            for (int i = 0; i < nums.length; i++) {
+                myNums[i] = nums[nums.length-1];
+            }
+        }
+
+        return myNums;
+    }
+
+    /* Array-1 > sum2
+    *  Given an array of ints, return the sum of the first 2 elements in the array. If
+    *  the array length is less than 2, just sum up the elements that exist, returning 0 if the array is length 0.
+    */
+
+    public static int sum2(int[] nums) {
+
+        int total = 0;
+        if (nums.length ==2) {
+            total = nums[0] + nums[1];
+        } else if (nums.length == 1){
+           total = nums[0];
+        } else if (nums.length == 0){
+            return total;
+        } else {
+            for (int i = 0; i < 2; i++) {
+                total = total + nums[i];
+            }
+        }
+        return total;
+    }
+
+
 
 
 
