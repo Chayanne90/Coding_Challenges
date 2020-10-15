@@ -144,19 +144,75 @@ public class main2 {
         return total;
     }
 
+    /* Array-1 > middleWay
+       Given 2 int arrays, a and b, each length 3, return a new array length 2 containing their middle elements
+     */
+
+    public static int[] middleWay(int[] a, int[] b) {
+
+        int [] myArr = new int[2];
+        myArr[0] = a[a.length/2];
+        myArr[1] = b[b.length/2];
+        return myArr;
+    }
+
+    /* Array-1 > makeEnds
+    * Given an array of ints, return a new array length 2 containing the first and last elements
+    *  from the original array. The original array will be length 1 or more.
+    */
+
+    public static int[] makeEnds(int[] nums) {
+
+        int [] myArr = new int[2];
+        myArr[0] = nums[0];
+        myArr[1] = nums[nums.length-1];
+        return myArr;
+    }
+
+    /* Array-1 > has23
+     *  Given an int array length 2, return true if it contains a 2 or a 3.
+     */
+    public static boolean has23(int[] nums) {
+
+        boolean result = false;
+        for (int i = 0; i < nums.length; i++) {
 
 
+            if (nums[i] ==2 || nums[i] ==3){
+                result = true;
+            }
+        }
 
+        return result;
+    }
 
+    /* Array-1 > makeLast
+    *  Given an int array, return a new array with double the length where its last element is the same
+    *  as the original array, and all the other elements are 0. The original array will be length 1 or more.
+    *  Note: by default, a new int array contains all 0's.
+    */
 
+    public static int[] makeLast(int[] nums) {
 
+        int [] myArr = new int[nums.length*2];
+
+        for (int i = 0; i <= myArr.length-1; i++) {
+            if ( i == myArr.length-1) {
+                myArr[i] = nums[nums.length-1];
+            } else {
+                myArr[i] = 0;
+            }
+        }
+        return myArr;
+    }
+    
 
     public static void main(String[] args) {
         int [] nums = {1, 2, 3};
-        //int [] nums2 = {7, 3};
-        //System.out.println();
+        int [] nums2 = {7, 3,5};
+       // System.out.println(makeLast(nums));
 
-        for (int x :reverse3(nums) ) {
+        for (int x :makeLast(nums) ) {
             System.out.print(x + " ");
         }
 
