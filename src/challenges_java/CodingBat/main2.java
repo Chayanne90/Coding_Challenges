@@ -205,14 +205,65 @@ public class main2 {
         }
         return myArr;
     }
-    
+
+    /*  Array-1 > double23
+    *  Given an int array, return true if the array contains 2 twice, or 3 twice.
+    *  The array will be length 0, 1, or 2.
+    */
+
+    public static boolean double23(int[] nums) {
+
+        boolean result = false;
+
+        if (nums.length == 0 || nums.length == 1) {
+            return result;
+        } else if ((nums[0] == 2 && nums[1]==2) || (nums[0] == 3 && nums[1]==3) ){
+            result = true;
+
+        }
+        return result;
+    }
+
+    /* Array-1 > fix23
+    *  Given an int array length 3, if there is a 2 in the array
+    *  immediately followed by a 3, set the 3 element to 0.
+    *  Return the changed array.
+    */
+
+    public static int[] fix23(int[] nums) {
+
+        int [] arr = new int[nums.length];
+
+        if (nums[0] == 2 && nums[1] ==3){
+            arr[0]=nums[0];
+            arr[1] = 0;
+            arr[2] = nums[2];
+        } else if (nums[1] == 2 && nums[2] ==3){
+            arr[0]= nums[0];
+            arr[1] = nums[1];
+            arr[2] = 0;
+        } else {
+            for (int i = 0; i < nums.length; i++) {
+
+                arr[i] = nums[i];
+            }
+        }
+
+
+        return arr;
+    }
+
+
+
+
+
 
     public static void main(String[] args) {
-        int [] nums = {1, 2, 3};
+        int [] nums = {4, 2,3 };
         int [] nums2 = {7, 3,5};
-       // System.out.println(makeLast(nums));
+        //System.out.println(fix23(nums));
 
-        for (int x :makeLast(nums) ) {
+        for (int x :fix23(nums) ) {
             System.out.print(x + " ");
         }
 
