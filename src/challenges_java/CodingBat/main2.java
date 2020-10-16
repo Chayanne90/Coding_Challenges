@@ -266,19 +266,58 @@ public class main2 {
             }
         }
 
-        
         for (int i = 0; i < b.length; i++) {
             if (b[i] == 1 ){
                 count = count+1;
             }
         }
-
         return count;
     }
 
+    /* Array-1 > biggerTwo
+    *  Start with 2 int arrays, a and b, each length 2. Consider the sum of the values
+    *  in each array. Return the array which has the largest sum. In event of a tie, return a.
+    * */
+
+    public static int[] biggerTwo(int[] a, int[] b) {
+
+        int countA = 0;
+        int countB = 0;
+        for (int i = 0; i < a.length; i++) {
+            countA = countA + a[i];
+            countB = countB + b[i];
+        }
+
+        if (countA > countB) {
+            return a;
+        } else  if (countB > countA) {
+            return b;
+        } else {
+            return a;
+        }
+    }
+
+    /* Array-1 > makeMiddle
+    *  Given an array of ints of even length, return a new array length 2 containing the
+    *  middle two elements from the original array. The original array will be length 2 or more.
+    */
+
+    public static int[] makeMiddle(int[] nums) {
+
+        int [] myArr = new int[2];
+
+        if (nums.length ==2) {
+            return nums;
+        } else {
+            for (int i = 0; i < nums.length; i++) {
 
 
 
+
+            }
+        }
+
+    }
 
 
 
