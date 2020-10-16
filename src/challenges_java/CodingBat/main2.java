@@ -316,16 +316,32 @@ public class main2 {
         return myArr;
     }
 
+    /* Array-1 > plusTwo
+    *  Given 2 int arrays, each length 2, return a new array length 4 containing all their elements.
+    */
+
+    public static int[] plusTwo(int[] a, int[] b) {
+
+        int [] arr = new int[a.length+b.length];
+
+        arr[0] = a[0];
+        arr[1] = a[1];
+        arr[2] = b[0];
+        arr[3] = b[1];
+
+        return arr;
+    }
+
 
 
 
 
     public static void main(String[] args) {
-        int [] nums = {1, 2, 3,3 };
-        //int [] nums2 = {7, 1,5};
+        int [] nums = {1, 2};
+        int [] nums2 = {7, 1};
         //System.out.println(makeMiddle(nums));
         //makeMiddle(nums);
-        for (int x :makeMiddle(nums) ) {
+        for (int x :plusTwo(nums,nums2) ) {
             System.out.print(x + " ");
         }
 
