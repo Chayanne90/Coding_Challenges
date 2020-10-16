@@ -307,16 +307,13 @@ public class main2 {
         int [] myArr = new int[2];
 
         if (nums.length ==2) {
-            return nums;
+            myArr =  nums;
         } else {
-            for (int i = 0; i < nums.length; i++) {
-
-
-
-
-            }
+            myArr[0] = nums[nums.length/2];
+            myArr[1] = nums[nums.length/2-1];
         }
 
+        return myArr;
     }
 
 
@@ -324,13 +321,13 @@ public class main2 {
 
 
     public static void main(String[] args) {
-        int [] nums = {1, 2, 3 };
-        int [] nums2 = {7, 1,5};
-        System.out.println(start1(nums, nums2));
-
-        /*for (int x :fix23(nums) ) {
+        int [] nums = {1, 2, 3,3 };
+        //int [] nums2 = {7, 1,5};
+        //System.out.println(makeMiddle(nums));
+        //makeMiddle(nums);
+        for (int x :makeMiddle(nums) ) {
             System.out.print(x + " ");
-        }*/
+        }
 
     }
 }
