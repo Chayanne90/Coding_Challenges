@@ -235,11 +235,11 @@ public class main2 {
         int [] arr = new int[nums.length];
 
         if (nums[0] == 2 && nums[1] ==3){
-            arr[0]=nums[0];
+            arr[0] = nums[0];
             arr[1] = 0;
             arr[2] = nums[2];
         } else if (nums[1] == 2 && nums[2] ==3){
-            arr[0]= nums[0];
+            arr[0] = nums[0];
             arr[1] = nums[1];
             arr[2] = 0;
         } else {
@@ -249,8 +249,31 @@ public class main2 {
             }
         }
 
-
         return arr;
+    }
+
+    /* Array-1 > start1
+    *  Start with 2 int arrays, a and b, of any length. Return how many of
+    *  the arrays have 1 as their first element.
+    */
+
+    public static int start1(int[] a, int[] b) {
+
+        int count = 0;
+        for (int i = 0; i < a.length; i++) {
+            if (a[i] == 1 ){
+                count ++;
+            }
+        }
+
+        
+        for (int i = 0; i < b.length; i++) {
+            if (b[i] == 1 ){
+                count = count+1;
+            }
+        }
+
+        return count;
     }
 
 
@@ -258,14 +281,17 @@ public class main2 {
 
 
 
-    public static void main(String[] args) {
-        int [] nums = {4, 2,3 };
-        int [] nums2 = {7, 3,5};
-        //System.out.println(fix23(nums));
 
-        for (int x :fix23(nums) ) {
+
+
+    public static void main(String[] args) {
+        int [] nums = {1, 2, 3 };
+        int [] nums2 = {7, 1,5};
+        System.out.println(start1(nums, nums2));
+
+        /*for (int x :fix23(nums) ) {
             System.out.print(x + " ");
-        }
+        }*/
 
     }
 }
