@@ -426,19 +426,15 @@ public class main2 {
         boolean result = false;
         if (nums.length <= 1){
             return result;
-
         } else {
-            for (int i = 0; i < nums.length-1; i++) {
-
-                if ( i != nums.length)
-
+            for (int i = 0; i < 2; i++) {
                 if (nums[i] == 1 && nums[i+1] == 3 ) {
                     result = true;
                 }
-                if ((i == nums.length-2) && (nums[i] == 1 && nums[i+1] == 3)  ){
-
+            }
+            for (int i = nums.length-2; i < nums.length-1; i++) {
+                if (nums[i] == 1 && nums[i+1] == 3 ) {
                     result = true;
-
                 }
             }
         }
