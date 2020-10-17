@@ -332,18 +332,44 @@ public class main2 {
         return arr;
     }
 
+    /*Array-1 > swapEnds
+    * Given an array of ints, swap the first and last elements in the array. Return the modified array.
+    * The array length will be at least 1.
+    */
+
+    public static int[] swapEnds(int[] nums) {
+
+        int [] myArr = new int[nums.length];
+        int temp1 = nums[0];
+        int temp2 = nums[nums.length-1];
+
+        for (int i = 0; i < nums.length; i++) {
+
+           if (i == 0){
+               myArr[i] = temp2;
+           } else if (i == nums.length-1) {
+               myArr[i] = temp1;
+           } else {
+               myArr[i] = nums[i];
+           }
+        }
+        return myArr;
+
+    }
+
+
+
 
 
 
 
     public static void main(String[] args) {
-        int [] nums = {1, 2};
+        int [] nums = {1, 2, 3, 4};
         int [] nums2 = {7, 1};
         //System.out.println(makeMiddle(nums));
-        //makeMiddle(nums);
-        for (int x :plusTwo(nums,nums2) ) {
+        //swapEnds(nums);
+       for (int x : swapEnds(nums)) {
             System.out.print(x + " ");
-        }
-
+       }
     }
 }
