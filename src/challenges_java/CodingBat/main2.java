@@ -345,7 +345,7 @@ public class main2 {
 
         for (int i = 0; i < nums.length; i++) {
 
-           if (i == 0){
+           if (i == 0) {
                myArr[i] = temp2;
            } else if (i == nums.length-1) {
                myArr[i] = temp1;
@@ -354,7 +354,6 @@ public class main2 {
            }
         }
         return myArr;
-
     }
 
     /* Array-1 > midThree
@@ -376,21 +375,37 @@ public class main2 {
         return myArr;
     }
 
+    /* Array-1 > maxTriple
+    * Given an array of ints of odd length, look at the first, last, and middle values
+    * in the array and return the largest. The array length will be a least 1.
+    * */
+
+    public static int maxTriple(int[] nums) {
 
 
+        int first, middle, last;
+        first = nums[0];
+        middle = nums[nums.length/2];
+        last = nums[nums.length-1];
 
+        if ( first > middle && first > last){
+            return first;
+        } else if (middle > first && middle > last){
+            return middle;
+        } else {
+            return last;
+        }
 
-
-
+    }
 
 
     public static void main(String[] args) {
-        int [] nums = {8, 6, 7, 5, 3, 0, 9};
+        int [] nums = {1, 2, 3};
         int [] nums2 = {7, 1};
-        //System.out.println(makeMiddle(nums));
+        System.out.println(maxTriple(nums));
        // midThree(nums);
-       for (int x : midThree(nums)) {
-            System.out.print(x + " ");
-       }
+//       for (int x : midThree(nums)) {
+//            System.out.print(x + " ");
+//       }
     }
 }
