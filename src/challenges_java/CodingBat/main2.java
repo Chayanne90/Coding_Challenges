@@ -416,12 +416,42 @@ public class main2 {
         }
     }
 
+    /* Array-1 > unlucky1
+    *  We'll say that a 1 immediately followed by a 3 in an array is an "unlucky" 1.
+    * Return true if the given array contains an unlucky 1 in the first 2 or last 2
+    *  positions in the array.
+    */
+    public static boolean unlucky1(int[] nums) {
+
+        boolean result = false;
+        if (nums.length <= 1){
+            return result;
+
+        } else {
+            for (int i = 0; i < nums.length-1; i++) {
+
+                if ( i != nums.length)
+
+                if (nums[i] == 1 && nums[i+1] == 3 ) {
+                    result = true;
+                }
+                if ((i == nums.length-2) && (nums[i] == 1 && nums[i+1] == 3)  ){
+
+                    result = true;
+
+                }
+            }
+        }
+        return result;
+    }
+
+
 
     public static void main(String[] args) {
-        int [] nums = {1, 2, 3};
-        int [] nums2 = {7, 1};
-        System.out.println(maxTriple(nums));
-       // midThree(nums);
+        int [] nums = {1, 2, 3, 4, 1, 3};
+        int [] nums2 = {2, 1, 3, 4, 5};
+       // System.out.println(maxTriple(nums));
+        unlucky1(nums);
 //       for (int x : midThree(nums)) {
 //            System.out.print(x + " ");
 //       }
