@@ -357,6 +357,27 @@ public class main2 {
 
     }
 
+    /* Array-1 > midThree
+    *  Given an array of ints of odd length, return a new array length 3 containing the elements
+    *  from the middle of the array. The array length will be at least 3.
+    */
+    public static int [] midThree(int[] nums) {
+
+        int [] myArr = new int [3];
+        int count = nums.length/2-1;
+        if (nums.length <= 3){
+            myArr = nums;
+        } else {
+            for (int i = 0; i < myArr.length; i++) {
+                myArr[i] = nums[count];
+                count++;
+            }
+        }
+        return myArr;
+    }
+
+
+
 
 
 
@@ -364,11 +385,11 @@ public class main2 {
 
 
     public static void main(String[] args) {
-        int [] nums = {1, 2, 3, 4};
+        int [] nums = {8, 6, 7, 5, 3, 0, 9};
         int [] nums2 = {7, 1};
         //System.out.println(makeMiddle(nums));
-        //swapEnds(nums);
-       for (int x : swapEnds(nums)) {
+       // midThree(nums);
+       for (int x : midThree(nums)) {
             System.out.print(x + " ");
        }
     }
