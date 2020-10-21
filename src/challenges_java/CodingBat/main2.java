@@ -441,15 +441,51 @@ public class main2 {
         return result;
     }
 
+    /* Array-1 > front11
+    *  Given 2 int arrays, a and b, of any length, return a new array with the first element of
+    *  each array. If either array is length 0, ignore that array.
+    */
 
+    public static int[] front11(int[] a, int[] b) {
+
+        int [ ] myArr;
+        if (a.length == 0 && b.length == 0 ) {
+            return a;
+        } else {
+
+            if (a.length < b.length) {
+
+                if (a.length ==0){
+                    myArr = new int[1];
+                    myArr[0] = b[0];
+
+                } else {
+                    myArr = new int[2];
+                    myArr[0] = a[0];
+                    myArr[1] = b[0];
+                }
+
+
+            } else if(b.length < a.length) {
+                myArr = new int[1];
+                myArr[0] = a[0];
+
+            } else {
+                myArr = new int[2];
+                myArr[0] = a[0];
+                myArr[1] = b[0];
+            }
+        }
+        return myArr;
+    }
 
     public static void main(String[] args) {
-        int [] nums = {1, 2, 3, 4, 1, 3};
-        int [] nums2 = {2, 1, 3, 4, 5};
+        int [] nums = {};
+        int [] nums2 = {7, 9, 8};
        // System.out.println(maxTriple(nums));
-        unlucky1(nums);
-//       for (int x : midThree(nums)) {
-//            System.out.print(x + " ");
-//       }
+       // unlucky1(nums);
+       for (int x : front11(nums,nums2)) {
+            System.out.print(x + " ");
+       }
     }
 }
