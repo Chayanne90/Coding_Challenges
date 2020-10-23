@@ -99,17 +99,42 @@ public class Ease {
         return new int[] {};
     }
 
+    /* 1470. Shuffle the Array
+    *  Given the array nums consisting of 2n elements in the form [x1,x2,...,xn,y1,y2,...,yn].
+    *  Return the array in the form [x1,y1,x2,y2,...,xn,yn].
+    */
+
+    public static int [] shuffle(int[] nums, int n) {
+
+        int [ ] xNums = new int[n];
+        int [ ] yNums = new int[nums.length-n];
+        int [ ] newArr = new int [nums.length];
+
+        for (int i = 0; i < xNums.length; i++) {
+            xNums[i] = nums[i];
+            yNums[i] = nums[n];
+            n++;
+        }
+
+        int z =0;
+        for (int a = 0; a < nums.length-1; a+=2) {
+
+            newArr[a] = xNums[z];
+            newArr[a+1] = yNums[z];
+            z++;
+        }
+        return newArr;
+    }
+
+
     public static void main(String[] args) {
+        int [] arr = {1,4,2,3,3,2,4,1};
+        int n = 4;
 
-        int [] arr = {3,2,4};
-        int target = 6;
-
-        //twoSum(arr,target);
-        int [] arr2 =  twoSum(arr,target);
-        for (int i: arr2) {
-
-            System.out.println(i+ " ");
-
+        shuffle(arr,n);
+        System.out.println(" ");
+        for (int i: shuffle(arr,n)) {
+            System.out.print(i+ " ");
         }
 
     }
