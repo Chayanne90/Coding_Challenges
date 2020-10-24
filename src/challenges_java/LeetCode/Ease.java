@@ -1,6 +1,7 @@
 package challenges_java.LeetCode;
 
 
+import java.util.Arrays;
 import java.util.HashMap;
 
 /* Ease LeetCode challenges*/
@@ -126,16 +127,35 @@ public class Ease {
         return newArr;
     }
 
+    /* 1528. Shuffle String
+    *  Given a string s and an integer array indices of the same length.
+    * The string s will be shuffled such that the character at the ith
+    *  position moves to indices[i] in the shuffled string.
+    *  Return the shuffled string.
+    */
+
+    public static String restoreString(String s, int[] indices) {
+
+       char []arr = new char[indices.length];
+       for (int i = 0; i < indices.length; i++) {
+           arr[indices[i]] = s.charAt(i);
+       }
+       String str= String.copyValueOf(arr);
+       return str;
+    }
+
 
     public static void main(String[] args) {
-        int [] arr = {1,4,2,3,3,2,4,1};
-        int n = 4;
+        int [] arr = {4,0,2,6,7,3,1,5};
+        String s = "aaiougrt";
 
-        shuffle(arr,n);
-        System.out.println(" ");
-        for (int i: shuffle(arr,n)) {
-            System.out.print(i+ " ");
-        }
+        //restoreString(s,arr);
+        System.out.println(restoreString(s,arr));
+
+//
+//        for (char i: restoreString(s,arr)) {
+//            System.out.print(i+ " ");
+//        }
 
     }
 
