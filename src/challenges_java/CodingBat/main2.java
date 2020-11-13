@@ -479,13 +479,83 @@ public class main2 {
         return myArr;
     }
 
+    /* String-2 > doubleChar
+    *  Given a string, return a string where for every char in the
+    *  original, there are two chars.
+    */
+
+    public static String doubleChar(String str) {
+
+        String newStr = "";
+        int i = 0;
+        while(i < str.length()) {
+            for (int j = 0; j <= 1 ; j++) {
+                newStr += str.charAt(i);
+            }
+            i++;
+        }
+        return newStr;
+    }
+
+    /* String-2 > countHi
+    *  Return the number of times that the string
+    *  "hi" appears anywhere in the given string.
+    */
+    public static int countHi(String str) {
+
+        int count = 0;
+        for (int i = 0; i < str.length()-1; i++) {
+            if ((str.charAt(i) == 'h') && (str.charAt(i+1) == 'i')) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+    /* String-2 > catDog
+    *  Return true if the string "cat" and "dog"
+    *  appear the same number of times in the given string.
+    */
+    public static boolean catDog(String str) {
+
+        int countCat, countDog;
+        countCat = 0;
+        countDog = 0;
+        for (int i = 0; i <= str.length()-3; i++) {
+            if(str.substring(i,i+3).equals("cat")) {
+                countCat++;
+            }
+            if(str.substring(i,i+3).equals("dog")) {
+                countDog++;
+            }
+        }
+        if (countCat == countDog){
+            return true;
+        }
+        return false;
+    }
+
+    /*  String-2 > countCode
+    *   Return the number of times that the string "code" appears anywhere
+    *   in the given string, except we'll accept any letter for the 'd', so "cope" and "cooe" count.
+
+    public static void countCode(String str) {
+
+    }*/
+
+
+
+
+
+
     public static void main(String[] args) {
         int [] nums = {};
         int [] nums2 = {7, 9, 8};
-       // System.out.println(maxTriple(nums));
-       // unlucky1(nums);
-       for (int x : front11(nums,nums2)) {
-            System.out.print(x + " ");
-       }
+        String str = "aaacodebbb";
+      // System.out.println(doubleChar(str));
+        //countCode(str);
+//       for (int x : front11(nums,nums2)) {
+//            System.out.print(x + " ");
+//       }
     }
 }
