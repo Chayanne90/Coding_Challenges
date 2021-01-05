@@ -1,7 +1,6 @@
 package challenges_java.LeetCode;
 
 
-import java.util.Arrays;
 import java.util.HashMap;
 
 /* Ease LeetCode challenges*/
@@ -144,19 +143,139 @@ public class Ease {
        return str;
     }
 
+    /* 1512. Number of Good Pairs
+    *  Given an array of integers nums.
+    *  A pair (i,j) is called good if nums[i] == nums[j] and i < j.
+    *  Return the number of good pairs.
+    */
+
+    public static int numIdenticalPairs(int[] nums) {
+
+        int count = 0;
+        int temp = 0;
+        for (int i = 0; i < nums.length; i++) {
+            count = 0;
+            for (int j = i+1; j < nums.length; j++) {
+
+                if (nums[i] == nums[j]) {
+                    temp++;
+                }
+            }
+           count = count + temp;
+        }
+      return count;
+    }
+
+    /* 1365. How Many Numbers Are Smaller Than the Current Number
+    *  Given the array nums, for each nums[i] find out how many
+    * numbers in the array are smaller than it. That is, for each
+    * nums[i] you have to count the number of valid j's such that
+    * j != i and nums[j] < nums[i].
+    * Return the answer in an array.
+    */
+
+    public static int [] smallerNumbersThanCurrent(int[] nums) {
+
+        int count = 0;
+        int [] arr = new int[nums.length];
+
+        for (int i = 0; i < nums.length; i++) {
+            count = 0;
+            for (int j = 0; j < nums.length; j++) {
+                if ((j != i) && (nums[j] < nums[i])) {
+                    count++;
+                }
+            }
+            arr[i] = count;
+        }
+        return arr;
+    }
+
+    /* 1486. XOR Operation in an Array
+     * Given an integer n and an integer start.
+     * Define an array nums where nums[i] = start + 2*i (0-indexed) and n == nums.length.
+     * Return the bitwise XOR of all elements of nums.
+     */
+
+    public static int xorOperation(int n, int start) {
+
+        int [ ] nums = new int[n];
+        int result = 0;
+        for (int i = 0; i < nums.length; i++) {
+            nums[i] = start + 2 * i;
+            result = result ^ nums[i];
+        }
+       return result;
+    }
+
+
+    /* 1672. Richest Customer Wealth
+    *  You are given an m x n integer grid accounts where accounts[i][j] is
+    *  the amount of money the ith customer has in the jth bank. Return the
+    *  wealth that the richest customer has.
+    *  A customer's wealth is the amount of money they have in all their bank accounts.
+    *  The richest customer is the customer that has the maximum wealth.
+    */
+
+    public static int maximumWealth(int[][] accounts) {
+
+        int total, temp;
+        temp = total = 0;
+
+        for (int i = 0; i < accounts.length; i++) {
+            total = 0;
+            for (int j = 0; j < accounts[i].length; j++) {
+                total = total + accounts[i][j];
+            }
+            if (temp < total) {
+                temp = total;
+            }
+        }
+        return temp;
+    }
+
+    /* 560. Subarray Sum Equals K
+     * Given an array of integers nums and an integer k, return the
+     * total number of continuous subarrays whose sum equals to k.
+     */
+
+    public static int subarraySum(int[] nums, int k) {
+
+        int count, temp;
+        count = temp = 0;
+
+        for (int i = 0; i < nums.length; i++) {
+            count  = 0;
+            for (int j = 0; j < nums.length; j++) {
+
+                if (nums[i] + nums[j] == k) {
+                    count++;
+                }
+            }
+            if (temp < count) {
+                temp = count;
+            }
+        }
+        return temp;
+    }
+
+    /* 1431. Kids With the Greatest Number of Candies
+    *
+    * */
+
+
+
+
 
     public static void main(String[] args) {
-        int [] arr = {4,0,2,6,7,3,1,5};
-        String s = "aaiougrt";
 
-        //restoreString(s,arr);
-        System.out.println(restoreString(s,arr));
+        int[] nums = {1,1,1};
+        System.out.println(subarraySum(nums, 2));
 
-//
-//        for (char i: restoreString(s,arr)) {
-//            System.out.print(i+ " ");
-//        }
 
     }
+
+
+
 
 }
