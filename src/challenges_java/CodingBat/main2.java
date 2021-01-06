@@ -1,5 +1,8 @@
 package challenges_java.CodingBat;
 
+import java.util.ArrayList;
+import java.util.Map;
+
 public class main2 {
 
     /* Array-1 > firstLast6
@@ -538,24 +541,64 @@ public class main2 {
     /*  String-2 > countCode
     *   Return the number of times that the string "code" appears anywhere
     *   in the given string, except we'll accept any letter for the 'd', so "cope" and "cooe" count.
-
+    */
     public static void countCode(String str) {
 
-    }*/
+    }
 
 
+    /* From Pramp
+    * Move Zeros To End
+    * Given a static-sized array of integers arr, move all zeroes in the array to the end of the array. You should preserve the relative order of items in the array.
+    * We should implement a solution that is more efficient than a naive brute force.
+    */
 
+    public static int[] moveZerosToEnd(int[] arr) {
+
+        /*
+        ArrayList<Integer> myList = new ArrayList<>();
+        int [] newArr = new int[arr.length];
+
+        for (int i = 0; i < arr.length; i++) {
+
+            if (arr[i] != 0) {
+                myList.add(arr[i]);
+            }
+        }
+        for (int i = 0; i < arr.length; i++) {
+
+            if (arr[i] == 0) {
+                myList.add(arr[i]);
+            }
+        }
+        for (int i = 0; i < arr.length; i++) {
+            newArr[i] = myList.get(i);
+        }*/
+
+
+        int count = 0;  // Count of non-zero elements
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] != 0) {
+                arr[count++] = arr[i]; // count = the amoount of nonZero numbers
+            }
+        }
+
+        while (count < arr.length) {
+            arr[count++] = 0;      // Increment count to continue replacing the rest of the arr with zero
+        }
+
+        return arr;
+     }
 
 
 
     public static void main(String[] args) {
-        int [] nums = {};
-        int [] nums2 = {7, 9, 8};
-        String str = "aaacodebbb";
-      // System.out.println(doubleChar(str));
-        //countCode(str);
-//       for (int x : front11(nums,nums2)) {
-//            System.out.print(x + " ");
-//       }
+        int array[] = {1, 10, 0, 2, 8, 3, 0, 0, 6, 4, 0, 5, 7, 0};
+
+        moveZerosToEnd(array);
+
+       for (int x : moveZerosToEnd(array)) {
+            System.out.print(x + " ");
+       }
     }
 }
