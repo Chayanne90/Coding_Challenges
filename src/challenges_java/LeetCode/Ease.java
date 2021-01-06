@@ -1,7 +1,9 @@
 package challenges_java.LeetCode;
 
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 /* Ease LeetCode challenges*/
 public class Ease {
@@ -260,8 +262,34 @@ public class Ease {
     }
 
     /* 1431. Kids With the Greatest Number of Candies
-    *
+    *  Given the array candies and the integer extraCandies, where
+    *  candies[i] represents the number of candies that the ith kid has.
+    * For each kid check if there is a way to distribute extraCandies among
+    * the kids such that he or she can have the greatest number of candies
+    * among them. Notice that multiple kids can have the greatest number of candies.
     * */
+
+    public static List<Boolean> kidsWithCandies(int[] candies, int extraCandies) {
+
+        List<Boolean> myList = new ArrayList<Boolean>();
+        int max = candies[0];
+        for (int i = 0; i < candies.length; i++) {
+
+            // find the greatest number
+            if (candies[i] > max) {
+                max = candies[i];
+            }
+        }
+        for (int i = 0; i < candies.length; i++) {
+            int temp = candies[i] + extraCandies;
+            if (temp >=  max ) {
+                myList.add(true);
+            } else {
+                myList.add(false);
+            }
+        }
+        return myList;
+    }
 
 
 
@@ -269,8 +297,9 @@ public class Ease {
 
     public static void main(String[] args) {
 
-        int[] nums = {1,1,1};
-        System.out.println(subarraySum(nums, 2));
+        int[] nums = {2,8,7};
+
+        System.out.println(kidsWithCandies(nums, 1));
 
 
     }
