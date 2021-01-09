@@ -291,6 +291,32 @@ public class Ease {
         return myList;
     }
 
+    /* 1678. Goal Parser Interpretation
+    *  You own a Goal Parser that can interpret a string command.
+    *  The command consists of an alphabet of "G", "()" and/or "(al)" in
+    *  some order. The Goal Parser will interpret "G" as the string "G", "()" as
+    *  the string "o", and "(al)" as the string "al". The interpreted strings are
+    *  then concatenated in the original order.
+    *  Given the string command, return the Goal Parser's interpretation of command.
+    * */
+
+    public static String interpret(String command) {
+
+        String newStr = "";
+
+        for (int i = 0; i <= command.length()-1; i++) {
+            if ( command.charAt(i)== 'G') {
+                newStr += "G";
+            } else if ((command.charAt(i) == '(') && (command.charAt(i+1) == ')')) {
+                newStr += "o";
+            } else if((command.charAt(i) == '(') && (command.charAt(i+1) == 'a')) {
+                newStr += "al";
+            }
+        }
+
+      return newStr;
+    }
+
 
 
 
@@ -298,8 +324,9 @@ public class Ease {
     public static void main(String[] args) {
 
         int[] nums = {2,8,7};
+        String command = "(al)G(al)()()G";
 
-        System.out.println(kidsWithCandies(nums, 1));
+        System.out.println(interpret(command));
 
 
     }
