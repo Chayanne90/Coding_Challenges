@@ -581,11 +581,28 @@ public class main2 {
     }
 
 
+    /* String-1 > twoChar
+     *  Given a string and an index, return a string length 2 starting at the given index.
+     *  If the index is too big or too small to define a string length 2, use the first 2 chars.
+     *  The string length will be at least 2.
+     */
+
+    public static String twoChar(String str, int index) {
+
+        String newStr = "";
+        if (index >= str.length()-1 || index < 1 ) {
+            newStr =  newStr+str.substring(0,2);
+        } else if(index >= 2 ||index >= 0 ) {
+            newStr =  newStr+str.substring(index,index+2);
+        }
+        return newStr;
+    }
+
+
+
     public static void main(String[] args) {
 
-        String str = "coAcodeBcoleccoreDD";
-        //System.out.println(countCode(str));
-        //countCode(str);
-        System.out.println(countCode(str));
+        String str = "java";
+        System.out.println(twoChar(str,1));
     }
 }

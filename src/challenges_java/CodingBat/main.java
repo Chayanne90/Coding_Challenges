@@ -1078,24 +1078,6 @@ public class main {
     }
 
 
-   /* String-1 > twoChar
-   *  Given a string and an index, return a string length 2 starting at the given index.
-   *  If the index is too big or too small to define a string length 2, use the first 2 chars.
-   *  The string length will be at least 2.
-   */
-
-    public static String twoChar(String str, int index) {
-
-        String newStr = "";
-        if (index <= 0 || index > str.length()) {
-            newStr =  newStr+str.substring(0,2);
-        } else {
-            newStr =  newStr+str.substring(index,str.length());
-        }
-        return newStr;
-    }
-
-
     /* Map-2 > wordAppend
      *  Loop over the given array of strings to build a result string like this: when a string appears
      *  the 2nd, 4th, 6th, etc. time in the array, append the string to the result. Return the empty

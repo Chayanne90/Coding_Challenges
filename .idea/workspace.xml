@@ -2,22 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ad1c1b3b-884d-4846-96c5-4bf82dfcee1a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TutorialsChallenges/Adventure/Location.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TutorialsChallenges/Adventure/Location.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TutorialsChallenges/Adventure/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TutorialsChallenges/Adventure/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/challenges_java/BackAround.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/coding_challenges/challenges_java/CodingBat/main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/coding_challenges/challenges_java/CodingBat/main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/coding_challenges/challenges_java/CodingBat/main2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/coding_challenges/challenges_java/CodingBat/main2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/challenges_java/CodingBat/main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/challenges_java/CodingBat/main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/challenges_java/CodingBat/main2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/challenges_java/CodingBat/main2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/challenges_java/Front22.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/challenges_java/FrontThree.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/challenges_java/LeetCode/Ease.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/challenges_java/LeetCode/Ease.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/challenges_java/TwoSum.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/challenges_java/datatypeChallenges.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/challenges_java/endoffile.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/challenges_java/frontBack.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/challenges_java/loopChallenge1.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/challenges_java/main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/challenges_java/stringChallenge1.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
