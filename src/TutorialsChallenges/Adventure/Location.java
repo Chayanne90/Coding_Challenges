@@ -10,6 +10,7 @@ public class Location {
     private final Map<String, Integer> exists;
 
     public Location(int locationID, String description) {
+
         this.locationID = locationID;
         this.description = description;
         this.exists = new HashMap<>();

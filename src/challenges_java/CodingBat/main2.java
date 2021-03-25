@@ -538,15 +538,6 @@ public class main2 {
         return false;
     }
 
-    /*  String-2 > countCode
-    *   Return the number of times that the string "code" appears anywhere
-    *   in the given string, except we'll accept any letter for the 'd', so "cope" and "cooe" count.
-    */
-    public static void countCode(String str) {
-
-    }
-
-
     /* From Pramp
     * Move Zeros To End
     * Given a static-sized array of integers arr, move all zeroes in the array to the end of the array. You should preserve the relative order of items in the array.
@@ -555,50 +546,46 @@ public class main2 {
 
     public static int[] moveZerosToEnd(int[] arr) {
 
-        /*
-        ArrayList<Integer> myList = new ArrayList<>();
-        int [] newArr = new int[arr.length];
-
-        for (int i = 0; i < arr.length; i++) {
-
-            if (arr[i] != 0) {
-                myList.add(arr[i]);
-            }
-        }
-        for (int i = 0; i < arr.length; i++) {
-
-            if (arr[i] == 0) {
-                myList.add(arr[i]);
-            }
-        }
-        for (int i = 0; i < arr.length; i++) {
-            newArr[i] = myList.get(i);
-        }*/
-
-
         int count = 0;  // Count of non-zero elements
         for (int i = 0; i < arr.length; i++) {
             if (arr[i] != 0) {
                 arr[count++] = arr[i]; // count = the amoount of nonZero numbers
             }
         }
-
         while (count < arr.length) {
             arr[count++] = 0;      // Increment count to continue replacing the rest of the arr with zero
         }
-
         return arr;
-     }
+    }
 
+     /*String-2 > countCode
+     * Return the number of times that the string "code" appears anywhere in
+     * the given string, except we'll accept any letter for the 'd', so "cope"
+     * and "cooe" count.
+        countCode("aaacodebbb") → 1
+        countCode("codexxcode") → 2
+        countCode("cozexxcope") → 2
+     */
+
+    public static int countCode(String str) {
+
+        int count = 0;
+        for (int i = 0; i <= str.length()-4; i++) {
+            String tempStr = str.substring(i,i+4);
+            if ((tempStr.indexOf('c') == 0) && (tempStr.indexOf('o') == 1) &&  (tempStr.indexOf('e') == 3)) {
+                count++;
+            }
+            tempStr = "";
+        }
+        return count;
+    }
 
 
     public static void main(String[] args) {
-        int array[] = {1, 10, 0, 2, 8, 3, 0, 0, 6, 4, 0, 5, 7, 0};
 
-        moveZerosToEnd(array);
-
-       for (int x : moveZerosToEnd(array)) {
-            System.out.print(x + " ");
-       }
+        String str = "coAcodeBcoleccoreDD";
+        //System.out.println(countCode(str));
+        //countCode(str);
+        System.out.println(countCode(str));
     }
 }

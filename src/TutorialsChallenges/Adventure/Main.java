@@ -50,14 +50,14 @@ public class Main {
             Map<String, Integer> exists = locations.get(loc).getExists();
             System.out.println("Available exists are ");
 
-            for (String exits: exists.keySet()){
+            for (String exits: exists.keySet()) {
                 System.out.print(exits + " ");
             }
 
             System.out.println();
 
             String direction = in.nextLine().toUpperCase();
-            if (exists.containsKey(direction)){
+            if (exists.containsKey(direction)) {
                 loc = exists.get(direction);
             } else {
                 System.out.println("You cannot go in that direction");

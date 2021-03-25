@@ -303,7 +303,6 @@ public class Ease {
     public static String interpret(String command) {
 
         String newStr = "";
-
         for (int i = 0; i <= command.length()-1; i++) {
             if ( command.charAt(i)== 'G') {
                 newStr += "G";
@@ -313,20 +312,69 @@ public class Ease {
                 newStr += "al";
             }
         }
-
       return newStr;
     }
 
+
+    /* 1313. Decompress Run-Length Encoded List
+    *  We are given a list nums of integers representing a
+    *  list compressed with run-length encoding. Consider each
+    *  adjacent pair of elements [freq, val] = [nums[2*i], nums[2*i+1]] (with i >= 0).
+    *  For each such pair, there are freq elements with value val concatenated in
+    *  a sublist. Concatenate all the sublists from left to right to generate
+    * the decompressed list. Return the decompressed list.
+    * */
+
+    public static int[] decompressRLElist(int[] nums) {
+
+        int freq = 0;
+        int [] newArr1 = new int[0];
+        int [] newArr2 = new int[0];
+
+        for (int i = 0; i < nums.length-1; i += 2) {
+
+            freq = nums[i];
+            int val = nums[i+1];
+            if (freq > 1) {
+                newArr2 = new int[freq];
+                for (int j = 0; j < freq; j++) {
+                    newArr2[j] = val;
+                }
+
+            } else {
+                newArr1 = new int[freq];
+                for (int j = 0; j < freq; j++) {
+                    newArr1[j] = val;
+                }
+            }
+        }
+
+        int []newArr3 = new int [newArr1.length+newArr2.length];
+        System.out.println(newArr1.length+newArr2.length);
+        for (int j = 0; j < newArr1.length; j++) {
+            newArr3[j] = newArr1[j];
+        }
+        for (int x = 0; x < newArr2.length; x++) {
+            newArr3[x+1] = newArr2[x];
+        }
+
+
+        return newArr3;
+    }
 
 
 
 
     public static void main(String[] args) {
 
-        int[] nums = {2,8,7};
-        String command = "(al)G(al)()()G";
+        int[] nums = {1,2,3,4};
 
-        System.out.println(interpret(command));
+
+
+        //decompressRLElist(nums);
+        for (int x : decompressRLElist(nums)) {
+            System.out.println(x);
+        }
 
 
     }
