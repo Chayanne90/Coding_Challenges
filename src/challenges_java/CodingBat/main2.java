@@ -598,11 +598,37 @@ public class main2 {
         return newStr;
     }
 
+    /* String-1 > middleThree
+    *  Given a string of odd length, return the string length 3 from its middle,
+    *  so "Candy" yields "and". The string length will be at least 3.
+    */
+
+    public static String middleThree(String str) {
+        int prevMidle = str.length()/2;
+        if (str.length() <= 3) {
+            return str;
+        }
+        return str.substring(prevMidle-1,prevMidle+2);
+    }
+
+    /* String-1 > hasBad
+    *  Given a string, return true if "bad" appears starting at index 0 or 1
+    * in the string, such as with "badxxx" or "xbadxx" but not "xxbadxx". The
+    *  string may be any length, including 0. Note: use .equals() to compare
+    * 2 strings.
+    */
+
+    public static boolean hasBad(String str) {
+
+    }
+
+
 
 
     public static void main(String[] args) {
 
-        String str = "java";
-        System.out.println(twoChar(str,1));
+        String str = "and";
+        //middleThree(str);
+        System.out.println(middleThree(str));
     }
 }
