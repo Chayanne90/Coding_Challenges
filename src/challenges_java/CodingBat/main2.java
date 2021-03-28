@@ -620,6 +620,15 @@ public class main2 {
 
     public static boolean hasBad(String str) {
 
+        for (int i = 0; i < str.length(); i++) {
+
+            if (((str.length() == 3) && (!str.substring(i,i+3).equals("bad"))) || str.length() < 3){
+                return false;
+            } else if (i <= 1 && (str.substring(i,i+3).equals("bad"))) {
+                return true;
+            }
+        }
+        return false;
     }
 
 
@@ -627,8 +636,8 @@ public class main2 {
 
     public static void main(String[] args) {
 
-        String str = "and";
-        //middleThree(str);
-        System.out.println(middleThree(str));
+        String str = "xxbadxx";
+        //hasBad(str);
+        System.out.println(hasBad(str));
     }
 }
