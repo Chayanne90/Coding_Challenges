@@ -693,10 +693,24 @@ public class main2 {
 
     }
 
+
+    /* String-1 > lastTwo
+    *  Given a string of any length, return a new string where the last 2 chars,
+    *  if present, are swapped, so "coding" yields "codign".
+    */
+
+    public static String lastTwo(String str) {
+        if (str.equals("") || str.length() ==1){
+            return str;
+        }
+       return str.substring(0,str.length()-2)+str.charAt(str.length()-1)+str.charAt(str.length()-2);
+    }
+
+
     public static void main(String[] args) {
 
-        String str = "";
-        //conCat("abc", "cat");
-        System.out.println(conCat("abc", "c"));
+        String str = "co";
+
+        System.out.println(lastTwo(str));
     }
 }
