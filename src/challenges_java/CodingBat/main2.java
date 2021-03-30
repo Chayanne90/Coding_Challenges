@@ -648,13 +648,40 @@ public class main2 {
 
     }
 
+    /* String-1 > lastChars
+    *  Given 2 strings, a and b, return a new string made of the first char
+    *  of a and the last char of b, so "yo" and "java" yields "ya". If either
+    *  string is length 0, use '@' for its missing char.
+    */
+
+    public static String lastChars(String a, String b) {
+
+
+
+       if (a.equals("") && b.equals("")) {
+
+            return "@@";
+        } else {
+            if (a.equals("")) {
+                return "@"+b.substring(b.length()-,b.length());
+            } else if (b.equals("")) {
+                String aFirst = a.substring(0,1);
+                return a.substring(0,1)+"@";
+            } else {
+                return a.substring(0,1)+b.substring(b.length()-,b.length());
+            }
+        }
+
+
+    }
+
 
 
 
     public static void main(String[] args) {
 
         String str = "";
-        //hasBad(str);
-        System.out.println(atFirst(str));
+
+        System.out.println(lastChars("he", ""));
     }
 }
