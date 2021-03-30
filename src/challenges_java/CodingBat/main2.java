@@ -656,32 +656,47 @@ public class main2 {
 
     public static String lastChars(String a, String b) {
 
-
-
        if (a.equals("") && b.equals("")) {
 
             return "@@";
         } else {
             if (a.equals("")) {
-                return "@"+b.substring(b.length()-,b.length());
+                return "@"+b.substring(b.length()-1,b.length());
             } else if (b.equals("")) {
                 String aFirst = a.substring(0,1);
                 return a.substring(0,1)+"@";
             } else {
-                return a.substring(0,1)+b.substring(b.length()-,b.length());
+                return a.substring(0,1)+b.substring(b.length()-1,b.length());
             }
         }
-
-
     }
 
 
+    /* String-1 > conCat
+    *  Given two strings, append them together (known as "concatenation") and return
+    *  the result. However, if the concatenation creates a double-char, then omit one
+    *  of the chars, so "abc" and "cat" yields "abcat".
+`   */
 
+    public static String conCat(String a, String b) {
+
+        if(a.equals("")) {
+            return b;
+        } else if (b.equals("")) {
+            return a;
+        } else if (a.charAt(a.length()-1) == (b.charAt(0))){
+
+            return a.substring(0,a.length()-1)+b;
+        } else {
+            return a+b;
+        }
+
+    }
 
     public static void main(String[] args) {
 
         String str = "";
-
-        System.out.println(lastChars("he", ""));
+        //conCat("abc", "cat");
+        System.out.println(conCat("abc", "c"));
     }
 }
