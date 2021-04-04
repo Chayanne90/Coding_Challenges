@@ -693,7 +693,6 @@ public class main2 {
 
     }
 
-
     /* String-1 > lastTwo
     *  Given a string of any length, return a new string where the last 2 chars,
     *  if present, are swapped, so "coding" yields "codign".
@@ -707,10 +706,38 @@ public class main2 {
     }
 
 
+    /* String-1 > seeColor
+    *  Given a string, if the string begins with "red" or "blue"
+    *  return that color string, otherwise return the empty string.
+    */
+
+    public static String seeColor(String str) {
+
+        if (str.length() < 3  || (!str.substring(0,3).equals("red") && str.length() == 3)){
+            return "";
+        } else if (str.substring(0,3).equals("red") || (str.length() == 3 && str.substring(0,3).equals("red"))){
+            return str.substring(0,3);
+        } else if (str.substring(0,4).equals("blue") ) {
+            return str.substring(0,4);
+        } else {
+            return"";
+        }
+
+
+    }
+
+
+
+
+
+
+
+
     public static void main(String[] args) {
 
-        String str = "co";
+        String str = "red";
+        //seeColor(str);
+        System.out.println(seeColor(str));
 
-        System.out.println(lastTwo(str));
     }
 }
