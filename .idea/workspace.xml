@@ -2,11 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ad1c1b3b-884d-4846-96c5-4bf82dfcee1a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/out/production/coding_challenges/challenges_java/CodingBat/seeColor" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/coding_challenges/data_structure/Search_Algorithms/BinarySearch.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/coding_challenges/data_structure/Search_Algorithms/LinearSearch.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/coding_challenges/data_structure/Search_Algorithms/RecursiveSearch.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/coding_challenges/data_structure/app.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/coding_challenges/data_structure/stack/Stack.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data_structure/Search_Algorithms/BinarySearch.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data_structure/Search_Algorithms/LinearSearch.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data_structure/Search_Algorithms/RecursiveSearch.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data_structure/app.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data_structure/stack/Stack.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/coding_challenges/challenges_java/CodingBat/main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/coding_challenges/challenges_java/CodingBat/main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/coding_challenges/challenges_java/CodingBat/main2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/coding_challenges/challenges_java/CodingBat/main2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/challenges_java/CodingBat/main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/challenges_java/CodingBat/main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/coding_challenges/challenges_java/LeetCode/Ease.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/coding_challenges/challenges_java/LeetCode/Ease.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/coding_challenges/data_structure/arrayChallenge1.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/challenges_java/CodingBat/main2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/challenges_java/CodingBat/main2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/challenges_java/LeetCode/Ease.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/challenges_java/LeetCode/Ease.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data_structure/arrayChallenge1.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,12 +48,15 @@
     </file-type-list>
   </component>
   <component name="ProjectId" id="1V29TaDOZGCxoTpMVwF9XQ7K0vW" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -49,20 +65,20 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="preferences.editor.code.editing" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="TutorialsChallenges.polymorphism" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.main2">
-    <configuration name="Ease" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="challenges_java.LeetCode.Ease" />
+  <component name="RunManager" selected="Application.app">
+    <configuration name="BinarySearch" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="data_structure.Search_Algorithms.BinarySearch" />
       <module name="coding_challenges" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="challenges_java.LeetCode.*" />
+          <option name="PATTERN" value="data_structure.Search_Algorithms.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -70,12 +86,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Medium" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="challenges_java.LeetCode.Medium" />
+    <configuration name="RecursiveSearch" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="data_structure.Search_Algorithms.RecursiveSearch" />
       <module name="coding_challenges" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="challenges_java.LeetCode.*" />
+          <option name="PATTERN" value="data_structure.Search_Algorithms.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -83,8 +99,34 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Solution" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="data_structure.Solution" />
+    <configuration name="app (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="data_structure.binary_search.app" />
+      <module name="coding_challenges" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="data_structure.binary_search.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="app (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="data_structure.linear_search.app" />
+      <module name="coding_challenges" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="data_structure.linear_search.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="app" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="data_structure.app" />
       <module name="coding_challenges" />
       <extension name="coverage">
         <pattern>
@@ -96,39 +138,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="main2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="challenges_java.CodingBat.main2" />
-      <module name="coding_challenges" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="challenges_java.CodingBat.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="multidensionArray" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="TutorialsChallenges.multidensionArray" />
-      <module name="coding_challenges" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="TutorialsChallenges.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.main2" />
-        <item itemvalue="Application.Ease" />
-        <item itemvalue="Application.Medium" />
-        <item itemvalue="Application.multidensionArray" />
-        <item itemvalue="Application.Solution" />
+        <item itemvalue="Application.app" />
+        <item itemvalue="Application.RecursiveSearch" />
+        <item itemvalue="Application.BinarySearch" />
+        <item itemvalue="Application.app (2)" />
+        <item itemvalue="Application.app (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -157,6 +173,9 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

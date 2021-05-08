@@ -362,20 +362,127 @@ public class Ease {
         return newArr3;
     }
 
+    /*  1221. Split a String in Balanced Strings
+    *   Balanced strings are those that have an equal
+    *   quantity of 'L' and 'R' characters. Given a balanced string s,
+    *   split it in the maximum amount of balanced strings.Return the
+    *   maximum amount of split balanced strings.
+    */
+
+    public static int balancedStringSplit(String s) {
+
+        int amountL = 0;
+        int amountR = 0;
+        int balance = 0;
+
+
+        for (int i = 0; i < s.length(); i++) {
+            if (s.charAt(i)=='L') {
+                amountL += 1;
+            } else if (s.charAt(i)=='R'){
+                amountR += 1;
+            }
+            if (amountL == amountR){
+               balance +=1;
+            }
+        }
+        return balance;
+    }
+
+
+    public static void sameAlphaNum(String str1, String str2) {
+
+        String [] arr1 = str1.split(" ");
+        String [] arr2 = str2.split(" ");
+        String sameValues="";
+
+        if (arr1.length > arr2.length) {
+            boolean swi = true;
+            while (swi) {
+                for (int i = 0; i < arr2.length; i++) {
+                    if (arr2[i].equals(arr1[i])) {
+                        sameValues = arr2[i];
+                        System.out.println(arr2[i]);
+                    }
+                }
+            }
+
+            /*
+            for (int i = 0; i < arr2.length; i++) {
+                if (arr2[i].equals(arr1[i])) {
+                    sameValues = arr2[i];
+                    System.out.println(arr2[i]);
+                }
+            }
+
+            for (int i = arr2.length-1; i < arr1.length; i++) {
+                if (arr2[i] == arr1[i]){
+                    sameValues = arr2[i];
+                    System.out.println(sameValues);
+                }
+            }*/
+
+        }
+    }
+
+
+
+    /* 771. Jewels and Stones
+    * You're given strings jewels representing the types of stones that are jewels,
+    *  and stones representing the stones you have. Each character in stones is a
+    *  type of stone you have. You want to know how many of the stones you have are
+    *  also jewels. Letters are case sensitive, so "a" is considered a different type
+    * of stone from "A".
+    * */
+
+    public static int  numJewelsInStones(String J, String S) {
+
+        int count = 0;
+        for (int i = 0; i < S.length(); i++) {
+            for (int j = 0; j < J.length(); j++) {
+                if (S.charAt(i) == J.charAt(j)){
+                    count +=1;
+                }
+            }
+        }
+        //System.out.println(count);
+        return count;
+    }
+
+
+
+    /* 1281. Subtract the Product and Sum of Digits of an Integer
+    *  Given an integer number n, return the difference between
+    * the product of its digits and the sum of its digits.
+    */
+
+    public static int subtractProductAndSum(int n) {
+
+        String number = String.valueOf(n);
+        int product = 1;
+        int sum = 0;
+        for (int i = 0; i < number.length(); i++) {
+            String s = String.valueOf(number.charAt(i));
+            int num = Integer.valueOf(s);
+            product = product * num;
+        }
+        for (int x = 0; x < number.length(); x++) {
+            String s = String.valueOf(number.charAt(x));
+            int num = Integer.valueOf(s);
+            sum = sum + num;
+        }
+        return product - sum;
+    }
 
 
 
     public static void main(String[] args) {
 
-        int[] nums = {1,2,3,4};
+        String jewels = "z";
+        String stones = "ZZ";
 
-
-
-        //decompressRLElist(nums);
-        for (int x : decompressRLElist(nums)) {
-            System.out.println(x);
-        }
-
+        subtractProductAndSum(234);
+        //System.out.println(subtractProductAndSum(234));
 
     }
 
