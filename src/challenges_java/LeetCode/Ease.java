@@ -2,6 +2,7 @@ package challenges_java.LeetCode;
 
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
@@ -474,15 +475,104 @@ public class Ease {
         return product - sum;
     }
 
+    /*1880. Check if Word Equals Summation of Two Words */
+    public static boolean isSumEqual(String firstWord, String secondWord, String targetWord) {
+
+        String [] alphaBetArr = {"a","b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l",
+                "m","n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"};
 
 
+        String target, firstW, secondW;
+        target= firstW= secondW="";
+
+       for (int i = 0; i <= targetWord.length()-1; i++) {
+            for (int j = 0; j < alphaBetArr.length; j++) {
+                if (targetWord.charAt(i) == alphaBetArr[j].charAt(0)) {
+                    target = target+j;
+                }
+            }
+        }
+
+        for (int i = 0; i < firstWord.length(); i++) {
+            for (int j = 0; j < alphaBetArr.length; j++) {
+                if (firstWord.charAt(i) == alphaBetArr[j].charAt(0)) {
+                    firstW = firstW+j;
+                }
+            }
+        }
+
+        for (int i = 0; i < secondWord.length(); i++) {
+            for (int j = 0; j < alphaBetArr.length; j++) {
+                if (secondWord.charAt(i) == alphaBetArr[j].charAt(0)) {
+                    secondW = secondW+j;
+                }
+            }
+        }
+
+        Integer oneWord, twoWord,mainWord;
+        oneWord = twoWord =mainWord =0;
+
+        if (firstW.charAt(0) =='0' && firstWord.length()>1){
+            firstW = firstW.substring(1,firstW.length());
+            oneWord=Integer.valueOf(firstW);
+        } else {
+            oneWord=Integer.valueOf(firstW);
+        }
+
+        if (secondW.charAt(0) =='0' && secondWord.length()>1) {
+            secondW = secondW.substring(1,secondW.length());
+             twoWord=Integer.valueOf(secondW);
+        } else {
+            twoWord=Integer.valueOf(secondW);
+        }
+
+        if (target.charAt(0) =='0' && targetWord.length()>1){
+            target = target.substring(1,target.length());
+             mainWord=Integer.valueOf(target);
+        } else {
+            mainWord=Integer.valueOf(target);
+        }
+
+        int total = oneWord+twoWord;
+        return total == mainWord;
+
+    }
+
+
+
+    /* 1869. Longer Contiguous Segments of Ones than Zeros */
+    public static boolean checkZeroOnes(String s) {
+
+        int countOnes, countZeros, temp0,temp1;
+        countOnes = countZeros=temp0=temp1=0;
+
+
+        for (int i = 0; i < s.length(); i++) {
+            if (s.charAt(i) == '1') {
+                temp1+=1;
+                if (temp1 >countOnes ) {
+                    countOnes = temp1;
+                }
+                temp0 =0;
+            } else {
+                temp0+=1;
+                if (temp0 >countZeros ) {
+                    countZeros = temp0;
+                }
+                temp1 =0;
+            }
+        }
+        return countOnes > countZeros;
+    }
+
+
+    
     public static void main(String[] args) {
 
-        String jewels = "z";
-        String stones = "ZZ";
+        String s = "1";
 
-        subtractProductAndSum(234);
-        //System.out.println(subtractProductAndSum(234));
+        //checkZeroOnes(s);
+        System.out.println( checkZeroOnes(s));
 
     }
 
