@@ -3,6 +3,8 @@ package challenges_java.LeetCode;
 
 import org.w3c.dom.Node;
 
+import java.util.*;
+
 class ListNode {
 
 
@@ -55,7 +57,94 @@ public class Medium {
     }
 
 
+    public static List<Integer> meanderingArray(List<Integer> unsorted) {
+        int [] sortedArray = new int [unsorted.size()];
+        for (int i = 0; i < unsorted.size(); i++) {
+            sortedArray[i] = unsorted.get(i);
+
+
+        }
+        Arrays.sort(sortedArray);
+        List<Integer> meanderingList = new ArrayList<Integer>();
+        int lastIndex =1;
+        int large, small;
+        small=large=0;
+        int mid = sortedArray.length/2;
+        for (int i = 0; i < mid; i++) {
+            large = sortedArray[sortedArray.length-lastIndex];
+            small = sortedArray[i];
+            if(mid % 2==0){
+                meanderingList.add(large);
+                meanderingList.add(small);
+                lastIndex++;
+            } else {
+
+                if (i == mid-1) {
+                    meanderingList.add(sortedArray[small]);
+                }
+                meanderingList.add(large);
+                meanderingList.add(small);
+                lastIndex++;
+            }
+        }
+        return meanderingList;
+    }
+
+
+
+
+    public static int lengthOfLongestSubstring(String s) {
+
+        int count = 0;
+        char prevIHolder = ' ';
+        boolean sequenceBreak = false;
+        HashMap<Character,Character> substringMap = new HashMap<Character,Character>();
+
+        if (s.isBlank()){
+            if (s.length() < 1) {
+                return 0;
+            }
+            return 1;
+        }
+
+
+        for (int i = 0; i <= s.length()-1; i++) {
+
+            if (!substringMap.containsKey(s.charAt(i))) {
+                if (sequenceBreak){
+                    prevIHolder = ' ';
+                }
+                if (s.charAt(i) != s.charAt(i+1)) {
+
+                    prevIHolder =s.charAt(i);
+                    substringMap.put(s.charAt(i), s.charAt(i));
+                    count = 0;
+                } else {
+                    count++;
+                    sequenceBreak = true;
+                    System.out.println("previuos item:" +prevIHolder);
+                    substringMap.remove(prevIHolder);
+                }
+            }
+        }
+
+
+        if (count == s.length()-1){return 1;}
+        /*substringMap.entrySet().forEach(entry -> {
+            System.out.print(entry.getValue()+ " ");
+        });
+        System.out.println();
+       // System.out.println(substringMap.size());*/
+        return substringMap.size();
+    }
+
+
+
     public static void main(String[] args) {
+
+        String s = "a";
+        //lengthOfLongestSubstring(s);
+        System.out.println(lengthOfLongestSubstring(s));
 
     }
 }

@@ -1,10 +1,10 @@
 package challenges_java.LeetCode;
 
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
+import jdk.swing.interop.SwingInterOpUtils;
+
+import javax.xml.stream.events.Characters;
+import java.util.*;
 
 /* Ease LeetCode challenges*/
 public class Ease {
@@ -565,18 +565,323 @@ public class Ease {
         return countOnes > countZeros;
     }
 
+    /* 13. Roman to Integer */
+    public static int romanToInt(String s) {
+        HashMap<String, Integer> romanNumbers = new HashMap<String, Integer>();
+        romanNumbers.put("I",1);
+        romanNumbers.put("V",5);
+        romanNumbers.put("X",10);
+        romanNumbers.put("L",50);
+        romanNumbers.put("C",100);
+        romanNumbers.put("D",500);
+        romanNumbers.put("M",1000);
+        HashMap<String, Integer> romanNumbersRules = new HashMap<String, Integer>();
+        romanNumbersRules.put("IV", 4);
+        romanNumbersRules.put("IX", 9);
+        romanNumbersRules.put("XL", 40);
+        romanNumbersRules.put("XC", 90);
+        romanNumbersRules.put("CD", 400);
+        romanNumbersRules.put("CM", 900);
 
-    
-    public static void main(String[] args) {
+        int sum = 0;
+        if (s.length() > 1) {
+            for (int i = 0; i <= s.length() - 2; i++) {
+                if (romanNumbersRules.containsKey(s.substring(i, i + 2))) {
+                    sum = sum + romanNumbersRules.get(s.substring(i, i + 2));
+                    i++;
+                    if (i == s.length() - 2) {
+                        i++;
+                        sum = sum + romanNumbers.get(s.substring(i, i + 1));
+                    }
+                } else {
+                    if (i == s.length() - 2) {
+                        i++;
+                        sum = sum + romanNumbers.get(s.substring(i, i + 1));
+                        i--;
+                    }
+                    sum = sum + romanNumbers.get(s.substring(i, i + 1));
+                }
+            }
+        } else {
+            String singleNumber = Character.toString(s.charAt(0));
+           return romanNumbers.get(singleNumber);
+        }
+        return sum;
+    }
 
-        String s = "1";
 
-        //checkZeroOnes(s);
-        System.out.println( checkZeroOnes(s));
 
+    public static String polindrome(String palindrome) {
+        int count = 1;
+        String Strtemp = "";
+        for (int i = 0; i < palindrome.length()/2; i++) {
+            if (palindrome.charAt(i) == palindrome.charAt(palindrome.length()-count)){
+                Strtemp = Strtemp + palindrome.charAt(i);
+            }
+            count++;
+        }
+        Strtemp = palindrome.substring((palindrome.length()/2),palindrome.length())+Strtemp;
+        return Strtemp;
+    }
+
+    /* 12. Integer to Roman
+    public static String intToRoman(int num) {
+        String number = String.valueOf(num);
+        int tempNumber = 0;
+        String romanNumberStr , ch1,ch2,prev;
+        romanNumberStr = ch1 = ch2 = prev="";
+
+        HashMap<Integer, String> romanNumbers = new HashMap<Integer, String>();
+        romanNumbers.put(1,"I");
+        romanNumbers.put(5,"V");
+        romanNumbers.put(10,"X");
+        romanNumbers.put(50,"L");
+        romanNumbers.put(100,"C");
+        romanNumbers.put(500,"D");
+        romanNumbers.put(1000,"M");
+        romanNumbers.put(4,"IV");
+        romanNumbers.put(9,"IX");
+        romanNumbers.put(40,"XL");
+        romanNumbers.put(90,"XC");
+        romanNumbers.put(400,"CD");
+        romanNumbers.put(900,"CM");
+        /*
+        if (romanNumbers.containsKey(num)){
+            return romanNumbers.get(num);
+        } else {
+            if (num < 4) {
+                for (int j = 0; j < num; j++) {
+                    romanNumberStr = romanNumberStr + romanNumbers.get(1);
+                }
+                System.out.println(romanNumberStr);
+                return romanNumberStr;
+            } else if (num >4 && num <9) {
+                tempNumber = num - 5;
+                romanNumberStr = romanNumberStr + romanNumbers.get(5);
+                for (int j = 0; j < tempNumber; j++) {
+                    romanNumberStr = romanNumberStr + romanNumbers.get(1);
+                }
+                System.out.println(romanNumberStr);
+                return romanNumberStr;
+            }
+        }
+
+        if (romanNumbers.containsKey(num)){
+            System.out.println(romanNumbers.get(num));
+        } else {
+            for (int i = number.length()-1; i >=0; i--) {
+                System.out.println(i);
+                //converte Char to Integer
+                int strIntNumber = Character.getNumericValue(number.charAt(i));
+
+               // System.out.println(strIntNumber);
+                //check if the current index is in the map
+                if (romanNumbers.containsKey(strIntNumber)){
+                    System.out.println(romanNumbers.get(strIntNumber));
+                } else {
+
+                    if (strIntNumber >= 1 && strIntNumber < 4) {
+                        for (int j = 0; j < strIntNumber; j++) {
+                            romanNumberStr = romanNumberStr + romanNumbers.get(1);
+                        }
+                        System.out.println(romanNumberStr);
+                    } else if (strIntNumber > 4 && strIntNumber < 9) {
+                        tempNumber = strIntNumber - 5;
+                        romanNumberStr = romanNumberStr + romanNumbers.get(5);
+                        for (int j = 0; j < tempNumber; j++) {
+                            romanNumberStr = romanNumberStr + romanNumbers.get(1);
+                        }
+                        System.out.println(romanNumberStr);
+                        num = num - strIntNumber;
+                        number = String.valueOf(num);
+                        // if the current index is not and is not nonce of teh above then increment i by 1
+                    } else {
+                        int strIntNumbe1r = Character.getNumericValue(number.charAt(i+1));
+
+                        System.out.println(num);
+                        i++;
+
+                        //check if the current index is in the map
+                        if (romanNumbers.containsKey(strIntNumbe1r)){
+                          //  System.out.println(romanNumbers.get(strIntNumbe1r));
+
+                        }
+                    }
+                }
+            }
+        }*/
+
+    /* 12. Integer to Roman */
+    public static String intToRoman(int num) {
+
+        String number = String.valueOf(num);
+        int tempNumber ,lastItemOfNewnumber;
+        lastItemOfNewnumber = tempNumber = 0;
+        String romanNumberStr= "";
+        String prevNum = "";
+
+        HashMap<Integer, String> romanNumbers = new HashMap<Integer, String>();
+        romanNumbers.put(1,"I");
+        romanNumbers.put(5,"V");
+        romanNumbers.put(10,"X");
+        romanNumbers.put(50,"L");
+        romanNumbers.put(100,"C");
+        romanNumbers.put(500,"D");
+        romanNumbers.put(1000,"M");
+        romanNumbers.put(4,"IV");
+        romanNumbers.put(9,"IX");
+        romanNumbers.put(40,"XL");
+        romanNumbers.put(90,"XC");
+        romanNumbers.put(400,"CD");
+        romanNumbers.put(900,"CM");
+    /*
+    if (romanNumbers.containsKey(num)){
+        return romanNumbers.get(num);
+    } else {
+        if (num < 4) {
+            for (int j = 0; j < num; j++) {
+                romanNumberStr = romanNumberStr + romanNumbers.get(1);
+            }
+            System.out.println(romanNumberStr);
+            return romanNumberStr;
+        } else if (num >4 && num <9) {
+            tempNumber = num - 5;
+            romanNumberStr = romanNumberStr + romanNumbers.get(5);
+            for (int j = 0; j < tempNumber; j++) {
+                romanNumberStr = romanNumberStr + romanNumbers.get(1);
+            }
+            System.out.println(romanNumberStr);
+            return romanNumberStr;
+        }
+    }*/
+
+        if (romanNumbers.containsKey(num)){
+            return romanNumbers.get(num);
+        } else {
+            int length,newNum;
+            newNum= length = 0;
+            while(length < number.length()-1) {
+
+                number = String.valueOf(num);
+
+                for (int i = number.length()-1; i >=0; i--) {
+
+                    int currentIndex = Character.getNumericValue(number.charAt(i));
+
+                    if (romanNumbers.containsKey(currentIndex)) {
+
+                        romanNumberStr = romanNumberStr +romanNumbers.get(currentIndex);
+                        //System.out.println(romanNumbers.get(currentIndex));
+
+                        newNum = num-currentIndex;
+                        number = String.valueOf(newNum);
+                        lastItemOfNewnumber = Character.getNumericValue(number.charAt(number.length()-1));
+
+                        if (romanNumbers.containsKey(newNum)) {
+                            romanNumberStr = romanNumbers.get(newNum) +romanNumberStr;
+                            //System.out.println( romanNumberStr);
+                            i--;
+                        } else {
+                            i--;
+                        }
+
+                    } else {
+                        if (currentIndex >= 1 && currentIndex <= 4) {
+
+                            for (int j = 0; j < currentIndex; j++) {
+                                romanNumberStr = romanNumberStr + romanNumbers.get(1);
+                            }
+
+
+                            newNum = num-currentIndex;
+                            number = String.valueOf(newNum);
+                            lastItemOfNewnumber = Character.getNumericValue(number.charAt(number.length()-1));
+
+                            if (romanNumbers.containsKey(newNum)) {
+                                romanNumberStr = romanNumbers.get(newNum) +romanNumberStr;
+                                //System.out.println( romanNumberStr);
+                                i--;
+                            } else {
+                                i--;
+                            }
+
+                        } else if (currentIndex >4 && currentIndex <9) {
+                            tempNumber = currentIndex - 5;
+                            romanNumberStr = romanNumberStr + romanNumbers.get(5);
+
+                            for (int j = 0; j < tempNumber; j++) {
+                                romanNumberStr = romanNumberStr + romanNumbers.get(1);
+                            }
+
+                            newNum = num-currentIndex;
+                            number = String.valueOf(newNum);
+                            lastItemOfNewnumber = Character.getNumericValue(number.charAt(number.length()-1));
+
+                            if (romanNumbers.containsKey(newNum)) {
+                                romanNumberStr = romanNumbers.get(newNum) +romanNumberStr;
+                                //System.out.println( romanNumberStr);
+                                i--;
+                            } else {
+                                i--;
+                            }
+
+
+
+                        } else {
+                            //do somthing here when current i dont exits!
+                        }
+
+                    }
+
+
+                } // end for loop
+                length++;
+            } // end while loop
+            System.out.println(romanNumberStr);
+        }
+
+
+        return "";
+    }
+
+    public static int[] getConcatenation(int[] nums) {
+
+        int a[]=new int[nums.length+nums.length];
+        int count = 0;
+        for (int i = 0; i < a.length; i++) {
+           a[i] = nums[count];
+            if (count == nums.length-1){
+                count=0;
+            } else {
+                count++;
+            }
+        }
+       return a;
+    }
+
+    public static boolean containsDuplicate(int[] nums) {
+
+        Arrays.sort(nums);
+        for (int i = 0; i < nums.length - 1; ++i) {
+            if (nums[i] == nums[i + 1]) return true;
+        }
+        return false;
     }
 
 
 
 
+
+
+    public static void main(String[] args) {
+
+        int [] num = {1,1,1,3,3,4,3,2,4,2};
+        System.out.println(containsDuplicate(num));
+
+
+       /*
+        for ( int a: getConcatenation(num)) {
+            System.out.println(a);
+        }*/
+    }
 }
