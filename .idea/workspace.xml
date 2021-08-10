@@ -2,24 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ad1c1b3b-884d-4846-96c5-4bf82dfcee1a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/challenges_java/CodingBat/main3.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/coding_challenges/TutorialsChallenges/ArraysandListsBoxing/App4.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/coding_challenges/TutorialsChallenges/ArraysandListsBoxing/Intclass.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/coding_challenges/challenges_java/LeetCode/Ease.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/coding_challenges/challenges_java/LeetCode/Ease.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/coding_challenges/challenges_java/LeetCode/ListNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/coding_challenges/challenges_java/LeetCode/ListNode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/coding_challenges/challenges_java/LeetCode/Medium.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/coding_challenges/challenges_java/LeetCode/Medium.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TutorialsChallenges/ArraysandListsBoxing/App4.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/challenges_java/CodingBat/main2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/challenges_java/CodingBat/main2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/challenges_java/InterviewChallenge/Problems.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/challenges_java/InterviewChallenge/Problems.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/coding_challenges/challenges_java/CodingBat/main2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/coding_challenges/challenges_java/CodingBat/main2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/challenges_java/LeetCode/Ease.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/challenges_java/LeetCode/Ease.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/challenges_java/LeetCode/Medium.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/challenges_java/LeetCode/Medium.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data_structure/BinarySearchTrees/BST.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data_structure/BinarySearchTrees/BST.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data_structure/BinarySearchTrees/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data_structure/BinarySearchTrees/Node.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data_structure/BinarySearchTrees/main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data_structure/BinarySearchTrees/main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data_structure/Sorting_Algorithms/InsertionSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data_structure/Sorting_Algorithms/InsertionSort.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data_structure/Sorting_Algorithms/MergeSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data_structure/Sorting_Algorithms/MergeSort.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data_structure/Sorting_Algorithms/QuickSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data_structure/Sorting_Algorithms/QuickSort.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data_structure/Sorting_Algorithms/SelectionSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data_structure/Sorting_Algorithms/SelectionSort.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

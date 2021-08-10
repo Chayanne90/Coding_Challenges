@@ -868,6 +868,47 @@ public class Ease {
         return false;
     }
 
+    /*  26.  Remove Duplicates from Sorted Array */
+
+    public static int removeDuplicates(int[] nums) {
+        if (nums.length == 0) return 0;
+        int count = 0;
+        Arrays.sort(nums);
+        for (int i = 0; i < nums.length-1; i++) {
+
+            if (nums[i] != nums[i]) {
+                count++;
+                nums[count] = nums[i];
+            }
+        }
+        return count+1;
+    }
+
+    /* 27. Remove Element */
+
+    public static int removeElement(int[] nums, int val) {
+
+        if (nums.length == 0) return 0;
+        int count =0;
+        for (int i = 0; i < nums.length; i++) {
+
+            if (nums[count] != val){
+                nums[count] = nums[i];
+                count++;
+            }
+
+        }
+        return count;
+    }
+
+    
+
+
+
+
+
+
+
 
 
 
@@ -875,12 +916,12 @@ public class Ease {
 
     public static void main(String[] args) {
 
-        int [] num = {1,1,1,3,3,4,3,2,4,2};
-        System.out.println(containsDuplicate(num));
+        int [] num = {1,1,2};
+         System.out.println("return: - >"+removeDuplicates(num));
 
 
-       /*
-        for ( int a: getConcatenation(num)) {
+        /*
+        for ( int a: removeDuplicates(num)) {
             System.out.println(a);
         }*/
     }
